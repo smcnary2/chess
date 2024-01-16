@@ -1,30 +1,29 @@
-package passoffTests.chessTests.chessPieceTests;
+package java.passoffTests.chessTests.chessPieceTests;
 
 import org.junit.jupiter.api.Test;
 
-import static passoffTests.TestFactory.*;
+import static java.passoffTests.TestFactory.*;
 
-public class RookMoveTests {
+public class BishopMoveTests {
 
     @Test
-    public void rookMoveUntilEdge() {
-
+    public void bishopMoveUntilEdge() {
         validateMoves("""
                         | | | | | | | | |
                         | | | | | | | | |
                         | | | | | | | | |
+                        | | | |B| | | | |
                         | | | | | | | | |
                         | | | | | | | | |
                         | | | | | | | | |
-                        | | |R| | | | | |
                         | | | | | | | | |
                         """,
-                startPosition(2, 3),
+                startPosition(5, 4),
                 endPositions(new int[][]{
-                        {2, 4}, {2, 5}, {2, 6}, {2, 7}, {2, 8},
-                        {2, 2}, {2, 1},
-                        {1, 3},
-                        {3, 3}, {4, 3}, {5, 3}, {6, 3}, {7, 3}, {8, 3},
+                        {6, 5}, {7, 6}, {8, 7},
+                        {4, 5}, {3, 6}, {2, 7}, {1, 8},
+                        {4, 3}, {3, 2}, {2, 1},
+                        {6, 3}, {7, 2}, {8, 1},
                 })
         );
     }
@@ -34,37 +33,38 @@ public class RookMoveTests {
     public void bishopCaptureEnemy() {
         validateMoves("""
                         | | | | | | | | |
+                        | | | |Q| | | | |
                         | | | | | | | | |
+                        | |b| | | | | | |
+                        |r| | | | | | | |
                         | | | | | | | | |
-                        |N| | | | | | | |
-                        |r| | | | |B| | |
-                        | | | | | | | | |
-                        |q| | | | | | | |
+                        | | | | |P| | | |
                         | | | | | | | | |
                         """,
-                startPosition(4, 1),
+                startPosition(5, 2),
                 endPositions(new int[][]{
-                        {5, 1},
-                        {3, 1},
-                        {4, 2}, {4, 3}, {4, 4}, {4, 5}, {4, 6},
+                        {6, 3}, {7, 4},
+                        {4, 3}, {3, 4}, {2, 5},
+                        // none
+                        {6, 1},
                 })
         );
     }
 
 
     @Test
-    public void rookBlocked() {
+    public void bishopBlocked() {
         validateMoves("""
-                        | | | | | | |n|r|
-                        | | | | | | | |p|
                         | | | | | | | | |
                         | | | | | | | | |
                         | | | | | | | | |
                         | | | | | | | | |
                         | | | | | | | | |
                         | | | | | | | | |
+                        | | | | |R| |P| |
+                        | | | | | |B| | |
                         """,
-                startPosition(8, 8),
+                startPosition(1, 6),
                 endPositions(new int[][]{})
         );
     }

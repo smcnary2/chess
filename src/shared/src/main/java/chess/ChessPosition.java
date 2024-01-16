@@ -1,4 +1,4 @@
-package chess;
+package java.chess;
 
 /**
  * Represents a single square position on a chess board
@@ -7,7 +7,8 @@ package chess;
  * signature of the existing methods.
  */
 public class ChessPosition {
-
+    public int row;
+    public int column;
     public ChessPosition(int row, int col) {
     }
 
@@ -16,6 +17,7 @@ public class ChessPosition {
      * 1 codes for the bottom row
      */
     public int getRow() {
+        return row;
         throw new RuntimeException("Not implemented");
     }
 
@@ -24,6 +26,7 @@ public class ChessPosition {
      * 1 codes for the left row
      */
     public int getColumn() {
+
         throw new RuntimeException("Not implemented");
     }
 }

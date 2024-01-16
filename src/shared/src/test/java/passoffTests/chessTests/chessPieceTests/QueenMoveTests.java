@@ -1,8 +1,8 @@
-package passoffTests.chessTests.chessPieceTests;
+package java.passoffTests.chessTests.chessPieceTests;
 
 import org.junit.jupiter.api.Test;
 
-import static passoffTests.TestFactory.*;
+import static java.passoffTests.TestFactory.*;
 
 public class QueenMoveTests {
     @Test

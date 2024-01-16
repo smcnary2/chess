@@ -1,7 +1,7 @@
-package passoffTests.chessTests;
+package java.passoffTests.chessTests;
 
-import chess.ChessMove;
-import chess.ChessPiece;
+import java.chess.ChessMove;
+import java.chess.ChessPiece;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -10,8 +10,8 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-import static passoffTests.TestFactory.getNewMove;
-import static passoffTests.TestFactory.getNewPosition;
+import static java.passoffTests.TestFactory.getNewMove;
+import static java.passoffTests.TestFactory.getNewPosition;
 
 public class ChessMoveTests {
     private ChessMove original;

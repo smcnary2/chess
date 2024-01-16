@@ -1,4 +1,4 @@
-package chess;
+package java.chess;
 
 import java.util.Collection;
 
@@ -9,6 +9,9 @@ import java.util.Collection;
  * signature of the existing methods.
  */
 public class ChessPiece {
+    ChessGame.TeamColor pieceColor;
+    PieceType promotionPiece;
+    PieceType pieceType;
 
     public ChessPiece(ChessGame.TeamColor pieceColor, ChessPiece.PieceType type) {
     }

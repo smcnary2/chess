@@ -1,4 +1,4 @@
-package chess;
+package java.chess;
 
 /**
  * Represents moving a chess piece on a chessboard

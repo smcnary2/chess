@@ -1,13 +1,13 @@
-package passoffTests.chessTests.chessPieceTests;
+package java.passoffTests.chessTests.chessPieceTests;
 
 import chess.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import passoffTests.TestFactory;
+import java.passoffTests.TestFactory;
 
 import java.util.HashSet;
 
-import static passoffTests.TestFactory.*;
+import static java.passoffTests.TestFactory.*;
 
 public class PawnMoveTests {
 

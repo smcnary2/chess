@@ -1,9 +1,9 @@
-package passoffTests.chessTests;
+package java.passoffTests.chessTests;
 
 import chess.*;
 import org.junit.jupiter.api.*;
 
-import static passoffTests.TestFactory.*;
+import static java.passoffTests.TestFactory.*;
 
 public class ChessBoardTests {
 
