@@ -18,7 +18,7 @@ public class ChessPosition {
      */
     public int getRow() {
         return row;
-        throw new RuntimeException("Not implemented");
+        throw new RuntimeException("Not implemented");//what am I supposed to do with this
     }
 
     /**
@@ -26,7 +26,11 @@ public class ChessPosition {
      * 1 codes for the left row
      */
     public int getColumn() {
-
+        return column;
         throw new RuntimeException("Not implemented");
     }
+
+    //toString
+    //equals
+    //hashCode
 }
