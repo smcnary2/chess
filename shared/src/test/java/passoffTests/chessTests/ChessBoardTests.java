@@ -1,6 +1,6 @@
 package java.passoffTests.chessTests;
 
-import chess.*;
+import java.chess.*;//had to change because my project struct is messed up
 import org.junit.jupiter.api.*;
 
 import static java.passoffTests.TestFactory.*;
