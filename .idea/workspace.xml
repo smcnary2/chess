@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="almost fixed project structure">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/chess.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/lib/passoff-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/shared.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessMove.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPiece.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPosition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/InvalidMoveException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/test/java/passoffTests/TestFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests/ChessBoardTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests/ChessMoveTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests/ChessPositionTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests/chessPieceTests/BishopMoveTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests/chessPieceTests/KingMoveTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests/chessPieceTests/KnightMoveTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests/chessPieceTests/PawnMoveTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests/chessPieceTests/QueenMoveTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests/chessPieceTests/RookMoveTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2amaFafdUkHOCQCm1pudCxgQ8am" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sofia/IdeaProjects/trying to fix chess/shared&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sofia\IdeaProjects\chess" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sofia\IdeaProjects\chess\shared" />
+      <recent name="C:\Users\sofia\IdeaProjects\chess" />
+      <recent name="C:\Users\sofia\IdeaProjects\chess\client" />
+      <recent name="C:\Users\sofia\IdeaProjects\chess\server" />
+      <recent name="C:\Users\sofia\IdeaProjects\chess\shared\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ChessBoardTests.getAddPiece">
+    <configuration name="ChessBoardTests.getAddPiece" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chess" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="java.passoffTests.chessTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="java.passoffTests.chessTests" />
+      <option name="MAIN_CLASS_NAME" value="java.passoffTests.chessTests.ChessBoardTests" />
+      <option name="METHOD_NAME" value="getAddPiece" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KnightMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chess" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="java.passoffTests.chessTests.chessPieceTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="java.passoffTests.chessTests.chessPieceTests" />
+      <option name="MAIN_CLASS_NAME" value="java.passoffTests.chessTests.chessPieceTests.KnightMoveTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.KnightMoveTests" />
+        <item itemvalue="JUnit.ChessBoardTests.getAddPiece" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="" />
+      <created>1704926106067</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704926106067</updated>
+      <workItem from="1704926107055" duration="6725000" />
+      <workItem from="1705523657731" duration="4468000" />
+      <workItem from="1705536218081" duration="3603000" />
+      <workItem from="1705542527178" duration="2419000" />
+      <workItem from="1705600164449" duration="709000" />
+      <workItem from="1705600886770" duration="100000" />
+      <workItem from="1705600997537" duration="466000" />
+      <workItem from="1705601476072" duration="207000" />
+    </task>
+    <task id="LOCAL-00001" summary="fixed repo">
+      <option name="closed" value="true" />
+      <created>1704926196837</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1704926196837</updated>
+    </task>
+    <task id="LOCAL-00002" summary="imported github files">
+      <option name="closed" value="true" />
+      <created>1705347481762</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705347481762</updated>
+    </task>
+    <task id="LOCAL-00003" summary="worked on ChessBoard">
+      <option name="closed" value="true" />
+      <created>1705427251019</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705427251019</updated>
+    </task>
+    <task id="LOCAL-00004" summary="worked on move, piece and position">
+      <option name="closed" value="true" />
+      <created>1705428247739</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705428247739</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fixed errors in all classes">
+      <option name="closed" value="true" />
+      <created>1705526434844</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705526434844</updated>
+    </task>
+    <task id="LOCAL-00006" summary="almost fixed project structure">
+      <option name="closed" value="true" />
+      <created>1705527966735</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705527966735</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed repo" />
+    <MESSAGE value="imported github files" />
+    <MESSAGE value="worked on ChessBoard" />
+    <MESSAGE value="worked on move, piece and position" />
+    <MESSAGE value="fixed errors in all classes" />
+    <MESSAGE value="almost fixed project structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost fixed project structure" />
+  </component>
+</project>
