@@ -71,4 +71,42 @@ public class ChessBoard {
         addPiece(new ChessPosition(8,8), new ChessPiece(ChessGame.TeamColor.BLACK, ChessPiece.PieceType.ROOK));
 
     }
+
+    @Override
+    public String toString() {
+        //lowercase is white uppercase black
+        StringBuilder Stringboard = new StringBuilder();
+        for (ChessPiece[] x:
+             newboard) {
+            Stringboard.append("\n");
+            for (ChessPiece y:
+                 x) {
+                Stringboard.append("|");
+                if(y != null) {
+                    if(y.pieceColor == ChessGame.TeamColor.BLACK) {
+                        if(y.pieceType == ChessPiece.PieceType.KNIGHT){
+                            Stringboard.append("N");
+                        }else {
+                            Stringboard.append(y.getPieceType().name().charAt(0));
+                        }
+                    }else{
+                        if(y.pieceType == ChessPiece.PieceType.KNIGHT){
+                            Stringboard.append("n");
+                        }else {
+                            Stringboard.append(y.getPieceType().name().toLowerCase().charAt(0));
+                        }
+                    }
+                }else{
+                    Stringboard.append(" ");
+                }
+
+            }
+            Stringboard.append("|");
+            Stringboard.append("\n");
+
+        }
+        return "ChessBoard{" +
+                "newboard=" + Stringboard +
+                '}';
+    }
 }
