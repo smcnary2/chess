@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="pass queen">
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="pass king">
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/KingMoves.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/KingMoves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/KnightMoves.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/KnightMoves.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +87,7 @@
       <recent name="C:\Users\sofia\IdeaProjects\chess\shared\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.KingMoveTests">
+  <component name="RunManager" selected="JUnit.KnightMoveTests">
     <configuration name="KingMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
@@ -103,7 +103,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PawnMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KnightMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
         <pattern>
@@ -112,7 +112,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="passoffTests.chessTests.chessPieceTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.chessPieceTests.PawnMoveTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.chessPieceTests.KnightMoveTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.KnightMoveTests" />
         <item itemvalue="JUnit.KingMoveTests" />
         <item itemvalue="JUnit.QueenMoveTests" />
         <item itemvalue="JUnit.RookMoveTests" />
         <item itemvalue="JUnit.RookMoveTests.rookMoveUntilEdge" />
-        <item itemvalue="JUnit.PawnMoveTests" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +190,7 @@
       <workItem from="1705600886770" duration="100000" />
       <workItem from="1705600997537" duration="466000" />
       <workItem from="1705601476072" duration="207000" />
-      <workItem from="1705601689829" duration="27608000" />
+      <workItem from="1705601689829" duration="28021000" />
     </task>
     <task id="LOCAL-00001" summary="fixed repo">
       <option name="closed" value="true" />
@@ -304,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705704717632</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="pass king">
+      <option name="closed" value="true" />
+      <created>1705705132333</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1705705132333</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +343,8 @@
     <MESSAGE value="pass pawn" />
     <MESSAGE value="pass rook" />
     <MESSAGE value="pass queen" />
-    <option name="LAST_COMMIT_MESSAGE" value="pass queen" />
+    <MESSAGE value="pass king" />
+    <option name="LAST_COMMIT_MESSAGE" value="pass king" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

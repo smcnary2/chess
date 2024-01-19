@@ -82,6 +82,10 @@ public class ChessPiece {
                 var KingObj = new KingMoves(myPosition,board,pieceColor);
                 KingObj.TestAllMoves();
                 return KingObj.moves;
+            case KNIGHT:
+                var KnightObj = new KnightMoves(myPosition,board,pieceColor);
+                KnightObj.TestAllMoves();
+                return KnightObj.moves;
         }
 
         throw new RuntimeException("Not implemented");
