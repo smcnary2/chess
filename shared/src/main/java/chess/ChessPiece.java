@@ -89,7 +89,7 @@ public class ChessPiece {
                 return KnightObj.moves;
         }
 
-        throw new RuntimeException("Not implemented");
+        return null;
     }
 
     @Override
