@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="pass add&amp;get piece">
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/chess/KingMoves.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/chess/KnightMoves.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/chess/PawnMoves.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/chess/QueenMove.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/chess/RookMoves.java" afterDir="false" />
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="added classes;pass move, position">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/shared.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shared/shared.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessMove.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPosition.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +90,38 @@
       <recent name="C:\Users\sofia\IdeaProjects\chess\shared\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ChessMoveTests">
+  <component name="RunManager" selected="JUnit.BishopMoveTests.bishopBlocked">
+    <configuration name="BishopMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shared" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.chessTests.chessPieceTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.chessTests.chessPieceTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.chessPieceTests.BishopMoveTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BishopMoveTests.bishopBlocked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shared" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.chessTests.chessPieceTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.chessTests.chessPieceTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.chessPieceTests.BishopMoveTests" />
+      <option name="METHOD_NAME" value="bishopBlocked" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ChessBoardTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
@@ -144,43 +168,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChessPositionTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shared" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="passoffTests.chessTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.chessTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessPositionTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KnightMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="chess" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="java.passoffTests.chessTests.chessPieceTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="java.passoffTests.chessTests.chessPieceTests" />
-      <option name="MAIN_CLASS_NAME" value="java.passoffTests.chessTests.chessPieceTests.KnightMoveTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ChessMoveTests" />
-        <item itemvalue="JUnit.ChessPositionTests" />
-        <item itemvalue="JUnit.ChessBoardTests" />
+        <item itemvalue="JUnit.BishopMoveTests.bishopBlocked" />
+        <item itemvalue="JUnit.BishopMoveTests" />
         <item itemvalue="JUnit.ChessBoardTests.defaultGameBoard" />
-        <item itemvalue="JUnit.KnightMoveTests" />
+        <item itemvalue="JUnit.ChessBoardTests" />
+        <item itemvalue="JUnit.ChessMoveTests" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +194,7 @@
       <workItem from="1705600886770" duration="100000" />
       <workItem from="1705600997537" duration="466000" />
       <workItem from="1705601476072" duration="207000" />
-      <workItem from="1705601689829" duration="6620000" />
+      <workItem from="1705601689829" duration="21110000" />
     </task>
     <task id="LOCAL-00001" summary="fixed repo">
       <option name="closed" value="true" />
@@ -274,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705602820050</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added classes;pass move, position">
+      <option name="closed" value="true" />
+      <created>1705608472931</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1705608472931</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +302,8 @@
     <MESSAGE value="almost fixed project structure" />
     <MESSAGE value="fixed project structure" />
     <MESSAGE value="pass add&amp;get piece" />
-    <option name="LAST_COMMIT_MESSAGE" value="pass add&amp;get piece" />
+    <MESSAGE value="added classes;pass move, position" />
+    <option name="LAST_COMMIT_MESSAGE" value="added classes;pass move, position" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -319,6 +322,76 @@
           <url>file://$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests/ChessBoardTests.java</url>
           <line>44</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests/ChessBoardTests.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

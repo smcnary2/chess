@@ -51,7 +51,24 @@ public class ChessPiece {
      *
      * @return Collection of valid moves
      */
+
     public Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
+        int currentRow = myPosition.row;
+        int currentCol = myPosition.column;
+        PieceType currentPieceType;//goes through switch
+        if (this.promotionPiece == null) {//I might get rid of this
+            currentPieceType = pieceType;
+        } else {
+            currentPieceType = this.promotionPiece;
+        }
+        switch(currentPieceType){
+            case BISHOP:
+                boolean inBounds = (currentRow < 8) && (currentCol > 1);
+                var BishopObj = new BishopMoves(myPosition, board, pieceColor);
+                BishopObj.TestAllMoves();
+                return BishopObj.moves;
+        }
+
         throw new RuntimeException("Not implemented");
     }
 
