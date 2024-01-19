@@ -70,6 +70,10 @@ public class ChessPiece {
                 var PawnObj = new PawnMoves(myPosition, board, pieceColor);
                 PawnObj.TestAllMoves();
                 return PawnObj.moves;
+            case ROOK:
+                var RookObj = new RookMoves(myPosition, board, pieceColor);
+                RookObj.TestAllMoves();
+                return RookObj.moves;
         }
 
         throw new RuntimeException("Not implemented");

@@ -14,8 +14,6 @@ public class BishopMoves {
     ChessPosition originalPosition;
     ChessPiece occupant;
     ChessBoard tmpBoard;
-    int rowInc;//increment for row depending on direction
-    int colInc;
     ChessGame.TeamColor currentColor;
 
 
@@ -52,11 +50,10 @@ public class BishopMoves {
         TestMove(1, -1);//Diagonal Forward Left
     }
 
-    public void TestMove(int rowIncrement, int colIncrement){
+    public void TestMove(int rowInc, int colInc){
         boolean notblocked = true;
         capture = false;
-        rowInc = rowIncrement;
-        colInc = colIncrement;
+
         currentRow = originalPosition.getRow()+rowInc;
         currentCol = originalPosition.getColumn()+colInc;
         boolean inBounds = (currentRow <= 8)&&(currentCol <= 8) && (currentRow >= 1)&& (currentCol >=1);
