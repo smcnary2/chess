@@ -63,10 +63,13 @@ public class ChessPiece {
         }
         switch(currentPieceType){
             case BISHOP:
-                boolean inBounds = (currentRow < 8) && (currentCol > 1);
                 var BishopObj = new BishopMoves(myPosition, board, pieceColor);
                 BishopObj.TestAllMoves();
                 return BishopObj.moves;
+            case PAWN:
+                var PawnObj = new PawnMoves(myPosition, board, pieceColor);
+                PawnObj.TestAllMoves();
+                return PawnObj.moves;
         }
 
         throw new RuntimeException("Not implemented");
