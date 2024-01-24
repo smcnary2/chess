@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class PawnMoves {
-    boolean capture;
     int currentRow;
     int currentCol;
     ChessPosition endPosition;

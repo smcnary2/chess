@@ -54,8 +54,7 @@ public class ChessPiece {
      */
 
     public Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
-        int currentRow = myPosition.row;
-        int currentCol = myPosition.column;
+
         PieceType currentPieceType;//goes through switch
         if (this.promotionPiece == null) {//I might get rid of this
             currentPieceType = pieceType;
@@ -65,27 +64,27 @@ public class ChessPiece {
         switch(currentPieceType){
             case BISHOP:
                 var BishopObj = new BishopMoves(myPosition, board, pieceColor);
-                BishopObj.TestAllMoves();
+                BishopObj.TestAllMovesBishop();
                 return BishopObj.moves;
             case PAWN:
                 var PawnObj = new PawnMoves(myPosition, board, pieceColor);
                 PawnObj.TestAllMoves();
                 return PawnObj.moves;
             case ROOK:
-                var RookObj = new RookMoves(myPosition, board, pieceColor);
-                RookObj.TestAllMoves();
+                var RookObj = new BishopMoves(myPosition, board, pieceColor);
+                RookObj.TestAllMovesRook();
                 return RookObj.moves;
             case QUEEN:
-                var QueenObj = new QueenMove(myPosition,board,pieceColor);
-                QueenObj.TestAllMoves();
+                var QueenObj = new BishopMoves(myPosition,board,pieceColor);
+                QueenObj.TestAllMovesQueen();
                 return QueenObj.moves;
             case KING:
-                var KingObj = new KingMoves(myPosition,board,pieceColor);
-                KingObj.TestAllMoves();
+                var KingObj = new BishopMoves(myPosition,board,pieceColor);
+                KingObj.TestAllMovesKing();
                 return KingObj.moves;
             case KNIGHT:
-                var KnightObj = new KnightMoves(myPosition,board,pieceColor);
-                KnightObj.TestAllMoves();
+                var KnightObj = new BishopMoves(myPosition,board,pieceColor);
+                KnightObj.TestAllMovesKnight();
                 return KnightObj.moves;
         }
 
