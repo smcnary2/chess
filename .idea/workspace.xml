@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="fixed ChessPiece">
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="condensed piece classes into bishopMoves">
+      <change afterPath="$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests/ChessGameTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/BishopMoves.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/KingMoves.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/QueenMove.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/RookMoves.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,14 +82,29 @@
       <recent name="C:\Users\sofia\IdeaProjects\chess" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sofia\IdeaProjects\chess\shared\src\test\java\passoffTests\chessTests" />
       <recent name="C:\Users\sofia\IdeaProjects\chess" />
       <recent name="C:\Users\sofia\IdeaProjects\chess\shared" />
       <recent name="C:\Users\sofia\IdeaProjects\chess\client" />
       <recent name="C:\Users\sofia\IdeaProjects\chess\server" />
-      <recent name="C:\Users\sofia\IdeaProjects\chess\shared\src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.KnightMoveTests">
+  <component name="RunManager" selected="JUnit.ChessGameTests">
+    <configuration name="ChessGameTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shared" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.chessTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.chessTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessGameTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="KingMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
@@ -137,21 +150,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RookMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shared" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="passoffTests.chessTests.chessPieceTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.chessTests.chessPieceTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.chessPieceTests.RookMoveTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="passoffTests.chessTests in shared" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
@@ -168,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ChessGameTests" />
+        <item itemvalue="JUnit.passoffTests.chessTests in shared" />
         <item itemvalue="JUnit.KnightMoveTests" />
         <item itemvalue="JUnit.KingMoveTests" />
         <item itemvalue="JUnit.QueenMoveTests" />
-        <item itemvalue="JUnit.RookMoveTests" />
-        <item itemvalue="JUnit.passoffTests.chessTests in shared" />
       </list>
     </recent_temporary>
   </component>
