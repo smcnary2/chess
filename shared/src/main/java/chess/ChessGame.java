@@ -194,7 +194,7 @@ public class ChessGame {
                                     moves) {
                                 fakeBoard = board;
                                 ChessMove tmp = new ChessMove(currentPosition, new ChessPosition(m.getEndPosition().getRow(), m.getEndPosition().getColumn()), m.getPromotionPiece());
-                                fakeBoard.movePiece(tmp);//move piece back
+                                fakeBoard.movePiece(tmp);//move piece
                                 kingInPlay = null;
                                 findKing(teamColor);
                                 if(kingInPlay ==null){
@@ -226,6 +226,7 @@ public class ChessGame {
      * @return True if the specified team is in stalemate, otherwise false
      */
     public boolean isInStalemate(TeamColor teamColor) {
+        ChessBoard fakeBoard;
         boolean check = this.isInCheck(colorInPlay);
         if(!check){//move this
             for (int i = 1; i < 9; i++) {
@@ -237,12 +238,11 @@ public class ChessGame {
                         if (moves != null) {
                             for (ChessMove m :
                                     moves) {
-                                //check all pieces moves not just king
-                                ChessMove tmp = new ChessMove(new ChessPosition(m.getStartPosition().getRow(), m.getStartPosition().getColumn()), new ChessPosition(m.getEndPosition().getRow(), m.getEndPosition().getColumn()), m.getPromotionPiece());
-                                this.board.movePiece(tmp);//move piece back
+                                fakeBoard = board;
+                                ChessMove tmp = new ChessMove(currentPos, new ChessPosition(m.getEndPosition().getRow(), m.getEndPosition().getColumn()), m.getPromotionPiece());
+                                fakeBoard.movePiece(tmp);//move piece
                                 check = this.isInCheck(teamColor);
-                                tmp = new ChessMove(new ChessPosition(m.getEndPosition().getRow(), m.getEndPosition().getColumn()), new ChessPosition(m.getStartPosition().getRow(), m.getStartPosition().getColumn()), m.getPromotionPiece());
-                                this.board.movePiece(tmp);
+
                             }
                             if (check) {
                                 return true;
