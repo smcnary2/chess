@@ -61,17 +61,16 @@ public class ChessGame {
         boolean check = false;
         for (ChessMove m:
                 moves) {
-            fakeBoard = this.board;
+            fakeBoard = board;
             //check if move causes check
             ChessMove tmp = new ChessMove(new ChessPosition(m.getStartPosition().getRow(), m.getStartPosition().getColumn()), new ChessPosition(m.getEndPosition().getRow(), m.getEndPosition().getColumn()), m.getPromotionPiece());
-            ChessPiece tmpPiece = this.board.getPiece(new ChessPosition(m.getEndPosition().getRow(), m.getEndPosition().getColumn()));
+            ChessPiece currentPiece = this.board.getPiece(new ChessPosition(m.getEndPosition().getRow(), m.getEndPosition().getColumn()));
             fakeBoard.movePiece(tmp);//move piece back
-            kingInPlay = null;
             check = this.isInCheck(piece.getTeamColor());
 
             tmp = new ChessMove(new ChessPosition(m.getEndPosition().getRow(), m.getEndPosition().getColumn()), new ChessPosition(m.getStartPosition().getRow(), m.getStartPosition().getColumn()), m.getPromotionPiece());
             fakeBoard.movePiece(tmp);
-            fakeBoard.addPiece(new ChessPosition(m.getEndPosition().getRow(), m.getEndPosition().getColumn()),tmpPiece);
+            fakeBoard.addPiece(new ChessPosition(m.getEndPosition().getRow(), m.getEndPosition().getColumn()),currentPiece);
             if(!check){//try to eliminate check change from checkmate to modify the board
                 movesPt2.add(m);// if you can't remove move
             }
@@ -155,12 +154,12 @@ public class ChessGame {
         }
         for (int i = 1; i < 9; i++) {//use piece moves on all pieces
             for (int j = 1; j < 9; j++) {
-                ChessPosition tmpP = new ChessPosition(i,j);
-                ChessPiece tmp = board.getPiece(tmpP);
-                if( tmp != null && tmp.getTeamColor() != teamColor){
-                    moves = tmp.pieceMoves(this.board,tmpP);//PieceMoves
+                ChessPosition currentPos = new ChessPosition(i,j);
+                ChessPiece currentPiece = board.getPiece(currentPos);
+                if( currentPiece != null && currentPiece.getTeamColor() != teamColor){
+                    moves = currentPiece.pieceMoves(this.board,currentPos);//PieceMoves
                     if(moves != null){
-                        if((moves.contains(new ChessMove(tmpP,kingInPlay, null))) || (moves.contains(new ChessMove(tmpP,kingInPlay, ChessPiece.PieceType.QUEEN)))){
+                        if((moves.contains(new ChessMove(currentPos,kingInPlay, null))) || (moves.contains(new ChessMove(currentPos,kingInPlay, ChessPiece.PieceType.QUEEN)))){
                             return true;
                         }
 
