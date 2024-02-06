@@ -27,5 +27,35 @@ deep copy: it copies everything from the original var or object
 
 
 ### Feb 6th
+Phase 2 description
+end points:
 
+**clear**
+- clears database
+
+**register**
+- new user& authenticates
+
+**login**
+- login and authenticates
+
+**logout**
+- logsout using authtoken
+
+**listGame**
+- verifies authtoken & gives list of games
+
+**createGame**
+- verifies authtoken and creates game
+
+**joinGame**
+- verifies authtoken and does a bunch of stuff so you can join game
+
+
+**Objects**
+UserData: username, password, email
+
+AuthData: authtoken, username
+
+GameData: gameID, whiteusername, blackusername, gamename, game
 
