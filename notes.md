@@ -26,3 +26,6 @@ shallow copy: just causes the two var to share the same pointers. Chnage one you
 deep copy: it copies everything from the original var or object
 
 
+### Feb 6th
+
+
