@@ -199,7 +199,7 @@ public class ChessGame {
                                 if(kingInPlay ==null){
                                     check = true;
                                 }else{
-                                    check = this.isInCheck(colorInPlay);
+                                    check = this.isInCheck(colorInPlay);//checking to see if playing out of turn
                                 }
 
                             }
