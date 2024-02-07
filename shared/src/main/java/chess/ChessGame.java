@@ -206,8 +206,6 @@ public class ChessGame {
                         }
                         if(check){
                             return true;
-                        }else{
-                            return false;
                         }
                     }
                 }
@@ -246,8 +244,6 @@ public class ChessGame {
                             if (check) {
                                 return true;
                             }
-                        } else {
-                            return false;
                         }
                     }
                 }
