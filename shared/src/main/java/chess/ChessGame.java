@@ -68,6 +68,7 @@ public class ChessGame {
             fakeBoard.movePiece(tmp);//move piece back
             check = this.isInCheck(piece.getTeamColor());
 
+            //puts the board back
             tmp = new ChessMove(new ChessPosition(m.getEndPosition().getRow(), m.getEndPosition().getColumn()), new ChessPosition(m.getStartPosition().getRow(), m.getStartPosition().getColumn()), m.getPromotionPiece());
             fakeBoard.movePiece(tmp);
             fakeBoard.addPiece(new ChessPosition(m.getEndPosition().getRow(), m.getEndPosition().getColumn()),currentPiece);
@@ -77,8 +78,7 @@ public class ChessGame {
             // add to 2nd list instead of removing
         }
 
-
-
+        //returned all the moves just added to movesPt2
         return movesPt2;
     }
 
@@ -97,7 +97,7 @@ public class ChessGame {
 
         //contains
 
-        if (moves.contains(move)) {
+        if (moves.contains(move)) {//checks to see if the move you want to make is in the list of valid moves
 
             this.board.movePiece(move);
             if (this.board.getPiece(move.getStartPosition()) != null) {
@@ -122,7 +122,7 @@ public class ChessGame {
         }else{
             throw new InvalidMoveException();
         }
-        if(colorInPlay.equals(TeamColor.WHITE)){
+        if(colorInPlay.equals(TeamColor.WHITE)){// changes the turn
             colorInPlay = TeamColor.BLACK;
         }else{
             colorInPlay = TeamColor.WHITE;
