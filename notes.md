@@ -59,3 +59,8 @@ AuthData: authtoken, username
 
 GameData: gameID, whiteusername, blackusername, gamename, game
 
+for phase 2: make a sequence diagram on website
+submit using uri
+look at phase 3
+
+
