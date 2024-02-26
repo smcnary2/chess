@@ -126,6 +126,24 @@ definitely read slide
 - make request
 - finally output the response body
 
+Repl: read evaluate p loop
+
+### Feb 22nd
+
+**Test Driven Development(TDD)**
+1. add a test
+2. implement the functionality
+3. run all the tests
+4. reactor/cleanup
+5. Run all the tests
+
+Data Access: memory version and SQL version
+
+fail()
+Assertion.assertTrue(boolean)
+Assertion.assertequals(expected return value, function)
+Assertion.assertthrows(expected return value/Exception, ()-> {throw new Exception})
+
 
 
 

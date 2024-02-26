@@ -4,9 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="finished commenting">
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="update notes.md">
+      <change afterPath="$PROJECT_DIR$/.idea/chess.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_jupiter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/slf4j_simple.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sparkjava_spark_core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/DataAccessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/index (1).html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/test/java/passoffTests/UserServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/StandardAPITests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +76,12 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "18",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/sofia/IdeaProjects/trying to fix chess/shared",
+    "last_opened_file_path": "C:/Users/sofia/IdeaProjects/chess/server/lib/passoff-dependencies.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,6 +90,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.updates",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -81,11 +99,11 @@
       <recent name="C:\Users\sofia\IdeaProjects\chess" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\resources" />
+      <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\test\java" />
+      <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\java" />
+      <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\java\server" />
       <recent name="C:\Users\sofia\IdeaProjects\chess\shared\src\test\java\passoffTests\chessTests" />
-      <recent name="C:\Users\sofia\IdeaProjects\chess" />
-      <recent name="C:\Users\sofia\IdeaProjects\chess\shared" />
-      <recent name="C:\Users\sofia\IdeaProjects\chess\client" />
-      <recent name="C:\Users\sofia\IdeaProjects\chess\server" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.ChessGameTests">
@@ -199,7 +217,9 @@
       <workItem from="1705601476072" duration="207000" />
       <workItem from="1705601689829" duration="29749000" />
       <workItem from="1706128885850" duration="1079000" />
-      <workItem from="1707435646754" duration="3364000" />
+      <workItem from="1707435646754" duration="4022000" />
+      <workItem from="1708640689763" duration="4517000" />
+      <workItem from="1708978032777" duration="1364000" />
     </task>
     <task id="LOCAL-00001" summary="fixed repo">
       <option name="closed" value="true" />
@@ -417,7 +437,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707282707641</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="update notes.md">
+      <option name="closed" value="true" />
+      <created>1707865906779</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1707865906779</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +487,8 @@
     <MESSAGE value="added comments" />
     <MESSAGE value="deleted code" />
     <MESSAGE value="finished commenting" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished commenting" />
+    <MESSAGE value="update notes.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update notes.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
