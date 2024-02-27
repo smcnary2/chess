@@ -13,6 +13,11 @@ public class UserRequests {
         email = e;
         error = 200;
     }
+    public UserRequests(String u, String pw){
+        username = u;
+        password = pw;
+        error = 200;
+    }
     public UserRequests(){//clear
         error = 200;
     }

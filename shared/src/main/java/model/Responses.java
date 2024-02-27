@@ -11,8 +11,13 @@ public class Responses {
         return "request failed";
     }
     public AuthData registerResponse(AuthData userAndToken) {//success response: { "username":"", "authToken":"" }
-        System.out.println(userAndToken.getAuthToken());
+        //System.out.println(userAndToken.getAuthToken());
         return userAndToken;
 
+    }
+
+    public AuthData loginResponse(AuthData userAndToken) {
+        System.out.println(userAndToken.getAuthToken());
+        return userAndToken;
     }
 }

@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UsersDAO {
-    List<User> databasePlaceholder;
+    public List<User> databasePlaceholder;
 
     public UsersDAO() {
-        databasePlaceholder = new ArrayList<>();
+        databasePlaceholder= new ArrayList<>();
     }
     public void insertUser(User newUser) throws DataAccessException {// insert user
         databasePlaceholder.add(newUser);
@@ -28,5 +28,17 @@ public class UsersDAO {
     }
     public List<User> findAllUsers() throws DataAccessException {
         return databasePlaceholder;//is this safe
+    }
+
+    public User findUser(User newUser) throws DataAccessException {
+        for (User x :
+                databasePlaceholder) {
+            if (x.getUsername().equals(newUser.getUsername())) {
+                if (x.getPassword().equals(newUser.getPassword())) {
+                    return x;//what am I supposed to return here
+                }
+            }
+        }
+        return null;
     }
 }

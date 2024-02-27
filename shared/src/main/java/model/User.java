@@ -1,9 +1,9 @@
 package model;
 
 public class User {
-    private String username;
-    private String password;
-    private String email;
+    public String username;
+    public String password;
+    public String email;
 
     public User(String n, String pw, String e) {
         username = n;
