@@ -4,14 +4,16 @@ import handlers.Handlers;
 import spark.Spark;
 
 public class Server {
-
+    public static void main(String[] args) {
+        new Server().run(8080);
+    }
     public int run(int desiredPort) {
         Spark.port(desiredPort);
 
         Spark.staticFiles.location("web");
 
         // Register your endpoints and handle exceptions here.
-        Spark.post("/user", (request, response) -> new Handlers().registerHandler(request, response));//do for each end point
+        Spark.post("/user", (request, response) -> new Handlers().registerHandler(request, response));
         //clear Request
         Spark.delete("/db", (request, response) -> new Handlers().clearHandler(request, response));//not complete
         /*
