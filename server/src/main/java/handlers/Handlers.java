@@ -20,6 +20,7 @@ public class Handlers {
 
     public Handlers(){
        data = new UsersDAO();
+       userResponse = new Responses();
     }
     public Object clearHandler(Request request, Response response, UserService userService) throws DataAccessException {
         UserRequests r = gson.fromJson(request.body(), UserRequests.class);
@@ -54,7 +55,6 @@ public class Handlers {
         response.status(userReq.error);
         //return gson.toJson();//put what service returns in here
         //return message if error code
-        //userService.checkList();
         return gson.toJson(userResponse.registerResponse(tmp));
     }
 
@@ -69,7 +69,6 @@ public class Handlers {
         var userReq = new UserRequests();
         var at = request.headers("authorization");
         userReq.setAuthtoken(at);
-        userService.checkList();
         userService.logout(userReq);
 
         response.status(userReq.error);

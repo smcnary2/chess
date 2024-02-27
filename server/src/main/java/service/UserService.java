@@ -36,14 +36,12 @@ public class UserService {
             //System.out.println(pushToUserDAO.findUser(newUser));
             AuthData t = new AuthData(UUID.randomUUID().toString(), newrequest.getUser());//creates a unique string for authtokin
             pushToAuthDAO.insert(t);//is this where I'm supposed to create the authtoken
-            return pushToAuthDAO.findAuth(t.getAuthToken());
+            return pushToAuthDAO.findAuth(t.getUsername());
         }
 
         return null;
     }
-    public User checkList() throws DataAccessException{
-        return pushToUserDAO.findUser(new User("bob","marley"));
-    }
+
     public void clear(UserRequests r) throws DataAccessException{
         pushToAuthDAO.clear();
         pushToUserDAO.clearAllUsers();
@@ -69,12 +67,12 @@ public class UserService {
     }
 
     public void logout(UserRequests r) throws DataAccessException {
-        System.out.println(pushToUserDAO.findUser(new User("bob","marley")));
-        if (pushToAuthDAO.findAuth(r.getAuthtoken()) == null) {
+        var authdata = pushToAuthDAO.findUser(r.authtoken);
+        if (authdata == null) {
             r.error = 401;//error 401 unauthorized
         } else {
             r.error = 200;
-            pushToAuthDAO.delete(r.getAuthtoken());
+            pushToAuthDAO.delete(authdata.getUsername());
         }
 
     }

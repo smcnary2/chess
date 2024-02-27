@@ -9,9 +9,18 @@ public class AuthDAO {
     public static Map<String, AuthData> token = new HashMap<>();
 
     //find authorization
-    public AuthData findAuth(String authtoken) throws DataAccessException {
-        return token.get(authtoken);//returns Authtoken variable/data
+    public AuthData findAuth(String user) throws DataAccessException {
+        return token.get(user);//returns Authtoken variable/data
     }
+    public AuthData findUser(String auth){
+        for(Map.Entry<String, AuthData> value : token.entrySet()){
+            if(value.getValue().getAuthToken().equals(auth)){
+                return value.getValue();
+            }
+        }
+        return null;
+    }
+
 
 
     public void delete(String user) {
@@ -28,12 +37,12 @@ public class AuthDAO {
     //delete, insert, clear
     public void insert(AuthData t) {
         //inserts the reandom string and username into map
-        token.put(t.getAuthToken(), t);
+        token.put(t.getUsername(), t);
 
     }
 
-    public AuthData setAuthtoken(AuthData auth, String username) {
+    public AuthData setAuthtoken(AuthData auth) {
 
-        return token.replace(username, auth);
+        return token.replace(auth.getUsername(), auth);
     }
 }
