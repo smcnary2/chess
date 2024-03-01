@@ -17,10 +17,7 @@ public class UsersDAO {
         //System.out.print(databasePlaceholder.get(0).getUsername() + databasePlaceholder.get(0).getPassword() + databasePlaceholder.get(0).getEmail());
     }
     public void clearAllUsers() {
-        for (User i :
-                databasePlaceholder) {
-            databasePlaceholder.remove(i);
-        }
+        databasePlaceholder = new ArrayList<>();
 
     }
     public boolean databaseIsEmpty() {

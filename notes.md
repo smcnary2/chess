@@ -144,6 +144,39 @@ Assertion.assertTrue(boolean)
 Assertion.assertequals(expected return value, function)
 Assertion.assertthrows(expected return value/Exception, ()-> {throw new Exception})
 
+### Feb 29th
 
+**SQL**:
+declarative language to work with relational data
 
+select
 
+DDL(data definition lang): create alter drop
+\
+DML(data manipulation lang): insert update delete
+\
+DQL(data query lang): select
+
+show databases: lists all databases
+\
+use: open database
+\
+show: lists all the tables
+\
+describe: lists field for a table
+\
+create database: creates a new database
+\
+create table: 
+\
+insert: inserts data into a table
+\
+select: query a table
+\
+drop table: delete a table
+\
+alter: edit table
+
+to get the amount of rows select count from variable
+
+joining tables in slides

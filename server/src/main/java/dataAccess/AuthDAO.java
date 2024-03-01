@@ -41,8 +41,9 @@ public class AuthDAO {
 
     }
 
-    public AuthData setAuthtoken(AuthData auth) {
-
-        return token.replace(auth.getUsername(), auth);
+    public boolean isEmpty(){
+        return token.isEmpty();
     }
+
+
 }

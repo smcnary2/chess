@@ -16,6 +16,7 @@ public class UserService {
     public UserService(){
         pushToAuthDAO = new AuthDAO();
         pushToUserDAO = new UsersDAO();
+        pushToUserDAO.databasePlaceholder.size();
     }
 
     public AuthData registerUser(UserRequests newrequest)throws DataAccessException{
@@ -24,10 +25,12 @@ public class UserService {
             if (x.getUsername().equals(newrequest.getUser())) {
                 //403 error already taken
                 newrequest.error = 403;
+                return new AuthData(null,"Error: already taken");
             }
             if (x.getEmail().equals(newrequest.getEmail())) {
                 //403 error already taken
                 newrequest.error = 403;
+                return new AuthData(null,"Error: already taken");
             }
         }
         if (newrequest.error == 200) {
@@ -42,7 +45,7 @@ public class UserService {
         return null;
     }
 
-    public void clear(UserRequests r) throws DataAccessException{
+    public void clear() throws DataAccessException{
         pushToAuthDAO.clear();
         pushToUserDAO.clearAllUsers();
     }
@@ -50,20 +53,21 @@ public class UserService {
 
         if (pushToAuthDAO.findAuth(newrequest.getUser()) != null) {
             newrequest.error = 401; //401 error unauthorized
-            return new AuthData("already logged in", "unauthorized");
+            return null;
         }
 
         User newUser = new User(newrequest.getUser(), newrequest.getPassword());
 
         if (pushToUserDAO.findUser(newUser) == null) {
             newrequest.error = 500;
-            return new AuthData("cannot find User", "invalid field");
+            return null;
         }
         newrequest.error = 200;
         AuthData t = new AuthData(UUID.randomUUID().toString(), newrequest.getUser());
         pushToAuthDAO.insert(t);
+        var authdata = pushToAuthDAO.findAuth(newrequest.getUser());
         //return response
-        return pushToAuthDAO.findAuth(newrequest.getUser());
+        return authdata;
     }
 
     public void logout(UserRequests r) throws DataAccessException {
@@ -75,5 +79,8 @@ public class UserService {
             pushToAuthDAO.delete(authdata.getUsername());
         }
 
+    }
+    public AuthData verifyAuth(String auth){
+        return pushToAuthDAO.findUser(auth);
     }
 }
