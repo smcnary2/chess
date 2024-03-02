@@ -13,10 +13,20 @@ public class UserServiceTests {
     void clearUserDAO() throws DataAccessException {
         var userService = new UserService();
         var newUser = new UserRequests("joe", "pw", "joe@joe.com");
-        userService.registerUser(newUser);
+        var token = userService.registerUser(newUser);
+
+        var gameService = new GameService();
+        var createGame = new UserRequests("newgame");
+        if(userService.verifyAuth(token.getAuthToken()) !=null){
+            createGame.error = 200;
+        }
+        createGame.setAuthtoken(token.getAuthToken());
+        Assertions.assertDoesNotThrow(() -> gameService.newGame(createGame));
 
         userService.clear();
-        Assertions.assertNotNull(userService.pushToUserDAO.findAllUsers());
+        gameService.clear();
+        Assertions.assertEquals(0,userService.pushToUserDAO.findAllUsers().size());
+        Assertions.assertEquals(0,gameService.pushRequest.findAllGames().size());
 
     }
 
@@ -90,11 +100,11 @@ public class UserServiceTests {
         req.setAuthtoken(token.getAuthToken());
         Assertions.assertDoesNotThrow(() -> userService.logout(req));
 
-        Assertions.assertNull(Assertions.assertDoesNotThrow(() -> userService.pushToAuthDAO.findAuth(createUser.getUser())));
+        Assertions.assertNull(Assertions.assertDoesNotThrow(() -> userService.pushToAuthDAO.findUser(createUser.getUser())));
     }
 
     @Test
-    void createGame(){
+    void createGame() throws DataAccessException {
         var userService = new UserService();
         var createUser = new UserRequests("joe", "pw", "joe@joe.com");
         var token = Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));
@@ -109,7 +119,7 @@ public class UserServiceTests {
         Assertions.assertNotNull(Assertions.assertDoesNotThrow(() -> gameService.newGame(req)));
     }
     @Test
-    void listgames(){
+    void listgames() throws DataAccessException {
         var userService = new UserService();
         var createUser = new UserRequests("joe", "pw", "joe@joe.com");
         var token = Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));
@@ -141,7 +151,7 @@ public class UserServiceTests {
     }
 
     @Test
-    void joinGame(){
+    void joinGame() throws DataAccessException {
         var userService = new UserService();
         var createUser = new UserRequests("joe", "pw", "joe@joe.com");
         var token = Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));

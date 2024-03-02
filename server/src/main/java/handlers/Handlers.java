@@ -11,6 +11,8 @@ import service.UserService;
 import spark.Request;
 import spark.Response;
 
+import java.util.Map;
+
 public class Handlers {
     private Gson gson = new Gson();
     public UserRequests userReq;
@@ -24,19 +26,10 @@ public class Handlers {
     }
     public Object clearHandler(Request request, Response response, UserService userService,GameService gameService) throws DataAccessException {
         userReq = new UserRequests();
-        var at = request.headers("authorization");
-        userReq.setAuthtoken(at);
 
-        if(userService.verifyAuth(at) == null ) {
-            userReq.error = 401;//error 401 unauthorized
-
-        }else{
-            userReq.error = 200;
-            userService.clear();
-            gameService.clear();
-        }
-
-
+        userReq.error = 200;
+        userService.clear();
+        gameService.clear();
 
 
         // create registerResponse and assign to value
@@ -53,6 +46,7 @@ public class Handlers {
         if (userReq.getUser()== null || userReq.getPassword() == null || userReq.getEmail() == null) {//check if request has valid fields
             // 400 error bad request
             userReq.error = 400;
+            response.status(userReq.error);
             return gson.toJson(userResponse.message(new ErrorMessage("error:bad request")));
         }
         var tmp = userService.registerUser(userReq);
@@ -84,6 +78,7 @@ public class Handlers {
         userReq.setAuthtoken(at);
         userService.logout(userReq);
         if(userReq.error != 200){
+            response.status(userReq.error);
             return gson.toJson(new ErrorMessage("error"));
         }
         response.status(userReq.error);
@@ -97,6 +92,7 @@ public class Handlers {
 
         if(userService.verifyAuth(at) == null) {
             userReq.error = 401;//error 401 unauthorized
+            response.status(userReq.error);
             return gson.toJson(new ErrorMessage("error: unauthorized"));
         }else{
             userReq.error = 200;
@@ -104,10 +100,10 @@ public class Handlers {
 
         var listOfGames = gameService.listGames(userReq);
         response.status(userReq.error);
-        if(listOfGames == null || listOfGames.getFirst() == null){
+        if(listOfGames == null){
             return gson.toJson( new ErrorMessage("error"));
         }
-        return gson.toJson(userResponse.listGameResponse(listOfGames));
+        return gson.toJson(Map.of("games",userResponse.listGameResponse(listOfGames)));
     }
 
     public Object newGameHandler(Request request, Response response,UserService userService, GameService gameService) throws DataAccessException{
@@ -117,7 +113,8 @@ public class Handlers {
 
         if(userService.verifyAuth(at) == null) {
             userReq.error = 401;//error 401 unauthorized
-            return gson.toJson(new ErrorMessage("error: unauthorized"));
+            response.status(userReq.error);
+            return gson.toJson(new ErrorMessage("error: unauthorized1"));
 
         }else{
             userReq.error = 200;
@@ -138,16 +135,20 @@ public class Handlers {
         var authdata = userService.verifyAuth(at);
         if( authdata == null) {
             userReq.error = 401;//error 401 unauthorized
+            response.status(userReq.error);
+            return gson.toJson(new ErrorMessage("error: unauthorized1"));
 
         }else{
             userReq.error = 200;
+
             userReq.setUsername(authdata.getUsername());
             gameService.joinGame(userReq);
         }
 
-
          response.status(userReq.error);
-
+        if(userReq.error != 200){
+            return gson.toJson(new ErrorMessage("error"));
+        }
          return "{}";
     }
 }

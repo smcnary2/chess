@@ -23,16 +23,19 @@ public class GameService {
     }
     public WebGame newGame(UserRequests requests) throws DataAccessException{
         if(requests.error == 200){
-            WebGame ngame = new WebGame(UUID.randomUUID().hashCode(), requests.getGameName());// dont use color here it's set in join game
+            WebGame ngame = new WebGame(Math.abs(UUID.randomUUID().hashCode()), requests.getGameName());// dont use color here it's set in join game
             pushRequest.insertGame(ngame);
             return ngame;
         }
         return null;
     }
     public void joinGame(UserRequests requests)throws DataAccessException{
-
-        int errorcode = pushRequest.joinGameInDAO(requests.getPlayerColor(),requests.getGameID(), requests.getUser());
-
+        int errorcode;
+        if(requests.getPlayerColor() != null) {
+            errorcode = pushRequest.joinGameInDAO(requests.getPlayerColor(), requests.getGameID(), requests.getUser());
+        }else{
+            errorcode = pushRequest.watchGame(requests.getGameID(), requests.getUser());
+        }
         requests.error = errorcode;
 
     }

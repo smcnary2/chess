@@ -39,7 +39,7 @@ public class UserService {
             //System.out.println(pushToUserDAO.findUser(newUser));
             AuthData t = new AuthData(UUID.randomUUID().toString(), newrequest.getUser());//creates a unique string for authtokin
             pushToAuthDAO.insert(t);//is this where I'm supposed to create the authtoken
-            return pushToAuthDAO.findAuth(t.getUsername());
+            return pushToAuthDAO.findAuth(t.getAuthToken());
         }
 
         return null;
@@ -51,36 +51,32 @@ public class UserService {
     }
     public AuthData login(UserRequests newrequest) throws DataAccessException {
 
-        if (pushToAuthDAO.findAuth(newrequest.getUser()) != null) {
-            newrequest.error = 401; //401 error unauthorized
-            return null;
-        }
 
         User newUser = new User(newrequest.getUser(), newrequest.getPassword());
 
         if (pushToUserDAO.findUser(newUser) == null) {
-            newrequest.error = 500;
+            newrequest.error = 401;
             return null;
         }
         newrequest.error = 200;
         AuthData t = new AuthData(UUID.randomUUID().toString(), newrequest.getUser());
         pushToAuthDAO.insert(t);
-        var authdata = pushToAuthDAO.findAuth(newrequest.getUser());
+        var authdata = pushToAuthDAO.findAuth(t.getAuthToken());
         //return response
         return authdata;
     }
 
     public void logout(UserRequests r) throws DataAccessException {
-        var authdata = pushToAuthDAO.findUser(r.authtoken);
+        var authdata = pushToAuthDAO.findAuth(r.authtoken);
         if (authdata == null) {
             r.error = 401;//error 401 unauthorized
         } else {
             r.error = 200;
-            pushToAuthDAO.delete(authdata.getUsername());
+            pushToAuthDAO.delete(authdata.getAuthToken());
         }
 
     }
-    public AuthData verifyAuth(String auth){
-        return pushToAuthDAO.findUser(auth);
+    public AuthData verifyAuth(String auth) throws DataAccessException {
+        return pushToAuthDAO.findAuth(auth);
     }
 }
