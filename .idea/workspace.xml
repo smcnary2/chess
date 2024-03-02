@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="static files passes">
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="all tests pass">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/handlers/Handlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/handlers/Handlers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/test/java/serviceTests/UserServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/serviceTests/UserServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,8 +71,12 @@
     "JUnit.StandardAPITests.uniqueAuthorizationTokens.executor": "Run",
     "JUnit.UserServiceTests.clearUserDAO.executor": "Run",
     "JUnit.UserServiceTests.createGame.executor": "Run",
+    "JUnit.UserServiceTests.createGameInvalidReq.executor": "Run",
+    "JUnit.UserServiceTests.executor": "Run",
     "JUnit.UserServiceTests.joinGame.executor": "Run",
+    "JUnit.UserServiceTests.joinGameInvalidReq.executor": "Run",
     "JUnit.UserServiceTests.listgames.executor": "Run",
+    "JUnit.UserServiceTests.listgamesInvalidReq.executor": "Run",
     "JUnit.UserServiceTests.loginInvalidReq.executor": "Run",
     "JUnit.UserServiceTests.loginUser.executor": "Run",
     "JUnit.UserServiceTests.loginWrongPw.executor": "Run",
@@ -85,6 +84,7 @@
     "JUnit.UserServiceTests.registerUser.executor": "Run",
     "JUnit.UserServiceTests.resisterUserInvalidReq.executor": "Run",
     "JUnit.passoffTests.serverTests in server.executor": "Run",
+    "JUnit.serviceTests in server.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -120,93 +120,91 @@
       <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\test\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StandardAPITests">
-    <configuration name="StandardAPITests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserServiceTests">
+    <configuration name="UserServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="PATTERN" value="serviceTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
+      <option name="PACKAGE_NAME" value="serviceTests" />
+      <option name="MAIN_CLASS_NAME" value="serviceTests.UserServiceTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StandardAPITests.badAuthJoin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTests.createGameInvalidReq" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="PATTERN" value="serviceTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
-      <option name="METHOD_NAME" value="badAuthJoin" />
+      <option name="PACKAGE_NAME" value="serviceTests" />
+      <option name="MAIN_CLASS_NAME" value="serviceTests.UserServiceTests" />
+      <option name="METHOD_NAME" value="createGameInvalidReq" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StandardAPITests.badColorJoin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTests.joinGameInvalidReq" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="PATTERN" value="serviceTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
-      <option name="METHOD_NAME" value="badColorJoin" />
+      <option name="PACKAGE_NAME" value="serviceTests" />
+      <option name="MAIN_CLASS_NAME" value="serviceTests.UserServiceTests" />
+      <option name="METHOD_NAME" value="joinGameInvalidReq" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StandardAPITests.failLogout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTests.listgamesInvalidReq" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="PATTERN" value="serviceTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
-      <option name="METHOD_NAME" value="failLogout" />
+      <option name="PACKAGE_NAME" value="serviceTests" />
+      <option name="MAIN_CLASS_NAME" value="serviceTests.UserServiceTests" />
+      <option name="METHOD_NAME" value="listgamesInvalidReq" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StandardAPITests.goodCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="serviceTests in server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="PATTERN" value="serviceTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
-      <option name="METHOD_NAME" value="goodCreate" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="serviceTests" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StandardAPITests" />
-        <item itemvalue="JUnit.StandardAPITests.badColorJoin" />
-        <item itemvalue="JUnit.StandardAPITests.badAuthJoin" />
-        <item itemvalue="JUnit.StandardAPITests.goodCreate" />
-        <item itemvalue="JUnit.StandardAPITests.failLogout" />
+        <item itemvalue="JUnit.UserServiceTests" />
+        <item itemvalue="JUnit.UserServiceTests.createGameInvalidReq" />
+        <item itemvalue="JUnit.UserServiceTests.listgamesInvalidReq" />
+        <item itemvalue="JUnit.UserServiceTests.joinGameInvalidReq" />
+        <item itemvalue="JUnit.serviceTests in server" />
       </list>
     </recent_temporary>
   </component>
@@ -240,7 +238,7 @@
       <workItem from="1708640689763" duration="4517000" />
       <workItem from="1708978032777" duration="16238000" />
       <workItem from="1709062369860" duration="25558000" />
-      <workItem from="1709233974562" duration="25447000" />
+      <workItem from="1709233974562" duration="27019000" />
     </task>
     <task id="LOCAL-00001" summary="fixed repo">
       <option name="closed" value="true" />
@@ -514,7 +512,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709318619016</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="all tests pass">
+      <option name="closed" value="true" />
+      <created>1709418144514</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1709418144514</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,7 +549,6 @@
     <MESSAGE value="pass knight" />
     <MESSAGE value="pass all tests" />
     <MESSAGE value="fixed ChessPiece" />
-    <MESSAGE value="all tests pass" />
     <MESSAGE value="cleaned up stalemate" />
     <MESSAGE value="renamed variables and removed dead code" />
     <MESSAGE value="update notes" />
@@ -557,7 +562,8 @@
     <MESSAGE value="logout works" />
     <MESSAGE value="login works" />
     <MESSAGE value="static files passes" />
-    <option name="LAST_COMMIT_MESSAGE" value="static files passes" />
+    <MESSAGE value="all tests pass" />
+    <option name="LAST_COMMIT_MESSAGE" value="all tests pass" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

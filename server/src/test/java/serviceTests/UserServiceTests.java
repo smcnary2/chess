@@ -13,6 +13,20 @@ public class UserServiceTests {
     void clearUserDAO() throws DataAccessException {
         var userService = new UserService();
         var newUser = new UserRequests("joe", "pw", "joe@joe.com");
+        userService.registerUser(newUser);
+
+        var createUser2 = new UserRequests("bob","pw2", "bob@bob");
+        Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser2));
+
+        userService.clear();
+        Assertions.assertEquals(0,userService.pushToUserDAO.findAllUsers().size());
+
+    }
+
+    @Test
+    void clearGameDAO() throws DataAccessException {
+        var userService = new UserService();
+        var newUser = new UserRequests("joe", "pw", "joe@joe.com");
         var token = userService.registerUser(newUser);
 
         var gameService = new GameService();
@@ -23,9 +37,8 @@ public class UserServiceTests {
         createGame.setAuthtoken(token.getAuthToken());
         Assertions.assertDoesNotThrow(() -> gameService.newGame(createGame));
 
-        userService.clear();
         gameService.clear();
-        Assertions.assertEquals(0,userService.pushToUserDAO.findAllUsers().size());
+
         Assertions.assertEquals(0,gameService.pushRequest.findAllGames().size());
 
     }
@@ -100,7 +113,20 @@ public class UserServiceTests {
         req.setAuthtoken(token.getAuthToken());
         Assertions.assertDoesNotThrow(() -> userService.logout(req));
 
-        Assertions.assertNull(Assertions.assertDoesNotThrow(() -> userService.pushToAuthDAO.findUser(createUser.getUser())));
+        Assertions.assertNull(Assertions.assertDoesNotThrow(() -> userService.pushToAuthDAO.findAuth(token.getAuthToken())));
+    }
+
+    @Test
+    void logoutUserInvalidReq(){
+        var userService = new UserService();
+        var createUser = new UserRequests("joe", "pw", "joe@joe.com");
+        var token = Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));
+
+        var req = new UserRequests();
+        req.setAuthtoken("iuyo");
+        Assertions.assertDoesNotThrow(() -> userService.logout(req));
+
+        Assertions.assertNotNull(Assertions.assertDoesNotThrow(() -> userService.pushToAuthDAO.findAuth(token.getAuthToken())));
     }
 
     @Test
@@ -117,6 +143,21 @@ public class UserServiceTests {
         }
         req.setAuthtoken(token.getAuthToken());
         Assertions.assertNotNull(Assertions.assertDoesNotThrow(() -> gameService.newGame(req)));
+    }
+
+    @Test
+    void createGameInvalidReq() throws DataAccessException {
+        var userService = new UserService();
+        var createUser = new UserRequests("joe", "pw", "joe@joe.com");
+        var token = Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));
+
+
+        var gameService = new GameService();
+        var req = new UserRequests(null);
+
+        req.setAuthtoken(token.getAuthToken());
+
+        Assertions.assertNull(Assertions.assertDoesNotThrow(() -> gameService.newGame(req)));
     }
     @Test
     void listgames() throws DataAccessException {
@@ -151,7 +192,26 @@ public class UserServiceTests {
     }
 
     @Test
-    void joinGame() throws DataAccessException {
+    void listgamesInvalidReq() throws DataAccessException {
+        var userService = new UserService();
+        var createUser = new UserRequests("joe", "pw", "joe@joe.com");
+        var token = Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));
+
+        var gameService = new GameService();
+        var createGame = new UserRequests("newgame");
+        if(userService.verifyAuth(token.getAuthToken()) !=null){
+            createGame.error = 200;
+        }
+        createGame.setAuthtoken(token.getAuthToken());
+        Assertions.assertDoesNotThrow(() -> gameService.newGame(createGame));
+
+        var req = new UserRequests();
+        req.setAuthtoken("90896");
+        Assertions.assertNotNull(Assertions.assertDoesNotThrow(() -> gameService.listGames(req)));
+    }
+
+    @Test
+    void joinGame() {
         var userService = new UserService();
         var createUser = new UserRequests("joe", "pw", "joe@joe.com");
         var token = Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));
@@ -162,7 +222,7 @@ public class UserServiceTests {
 
         var gameService = new GameService();
         var createGame = new UserRequests("newgame");
-        if(userService.verifyAuth(token.getAuthToken()) !=null){
+        if(Assertions.assertDoesNotThrow(() ->userService.verifyAuth(token.getAuthToken()) )!=null){
             createGame.error = 200;
         }
         createGame.setAuthtoken(token.getAuthToken());
@@ -179,6 +239,27 @@ public class UserServiceTests {
         Assertions.assertDoesNotThrow(() -> gameService.joinGame(req2));
         Assertions.assertEquals("joe",gameService.pushRequest.listOfGames.get(index).getBlackUsername(),"assigned black when already assigned");
 
+    }
+    @Test
+    void joinGameInvalidReq(){
+        var userService = new UserService();
+        var createUser = new UserRequests("joe", "null", "joe@joe.com");
+        var token = Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));
+
+        var gameService = new GameService();
+        var createGame = new UserRequests("newgame");
+        if(Assertions.assertDoesNotThrow(() ->userService.verifyAuth(token.getAuthToken()) )!=null){
+            createGame.error = 200;
+        }
+        createGame.setAuthtoken(token.getAuthToken());
+        var game = Assertions.assertDoesNotThrow(() -> gameService.newGame(createGame));
+
+        var req = new UserRequests("BLACK", 3345);
+        req.setUsername(createUser.getUser());
+        Assertions.assertDoesNotThrow(() -> gameService.joinGame(req));
+        int index = Assertions.assertDoesNotThrow(() -> gameService.pushRequest.findGame(game.getGameID()));
+
+        Assertions.assertEquals(null,gameService.pushRequest.listOfGames.get(index).getBlackUsername());
     }
 
 
