@@ -63,7 +63,7 @@ public class ChessPiece {
         }
         switch(currentPieceType){
             case BISHOP:
-                var BishopObj = new BishopMoves(myPosition, board, pieceColor);
+                var BishopObj = new TestMoves(myPosition, board, pieceColor);
                 BishopObj.TestAllMovesBishop();
                 return BishopObj.moves;
             case PAWN:
@@ -71,19 +71,19 @@ public class ChessPiece {
                 PawnObj.TestAllMoves();
                 return PawnObj.moves;
             case ROOK:
-                var RookObj = new BishopMoves(myPosition, board, pieceColor);
+                var RookObj = new TestMoves(myPosition, board, pieceColor);
                 RookObj.TestAllMovesRook();
                 return RookObj.moves;
             case QUEEN:
-                var QueenObj = new BishopMoves(myPosition,board,pieceColor);
+                var QueenObj = new TestMoves(myPosition,board,pieceColor);
                 QueenObj.TestAllMovesQueen();
                 return QueenObj.moves;
             case KING:
-                var KingObj = new BishopMoves(myPosition,board,pieceColor);
+                var KingObj = new TestMoves(myPosition,board,pieceColor);
                 KingObj.TestAllMovesKing();
                 return KingObj.moves;
             case KNIGHT:
-                var KnightObj = new BishopMoves(myPosition,board,pieceColor);
+                var KnightObj = new TestMoves(myPosition,board,pieceColor);
                 KnightObj.TestAllMovesKnight();
                 return KnightObj.moves;
         }

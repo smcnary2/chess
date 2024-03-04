@@ -3,7 +3,7 @@ package chess;
 import java.util.HashSet;
 import java.util.Set;
 
-public class BishopMoves {
+public class TestMoves {
     boolean capture;
     int currentRow;
     int currentCol;
@@ -18,7 +18,7 @@ public class BishopMoves {
 
 
 
-    public BishopMoves(ChessPosition myPosition, ChessBoard board, ChessGame.TeamColor color) {
+    public TestMoves(ChessPosition myPosition, ChessBoard board, ChessGame.TeamColor color) {
         currentRow = myPosition.getRow();
         currentCol = myPosition.getColumn();
         endPosition = new ChessPosition(currentRow,currentCol);

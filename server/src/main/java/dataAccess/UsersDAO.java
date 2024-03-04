@@ -20,9 +20,6 @@ public class UsersDAO {
         databasePlaceholder = new ArrayList<>();
 
     }
-    public boolean databaseIsEmpty() {
-        return databasePlaceholder.isEmpty();
-    }
     public List<User> findAllUsers() throws DataAccessException {
         return databasePlaceholder;//is this safe
     }

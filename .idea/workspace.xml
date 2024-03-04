@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="all tests pass">
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="fixed some tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/serviceTests/UserServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/serviceTests/UserServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/UsersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/UsersDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +238,7 @@
       <workItem from="1708640689763" duration="4517000" />
       <workItem from="1708978032777" duration="16238000" />
       <workItem from="1709062369860" duration="25558000" />
-      <workItem from="1709233974562" duration="27019000" />
+      <workItem from="1709233974562" duration="27638000" />
     </task>
     <task id="LOCAL-00001" summary="fixed repo">
       <option name="closed" value="true" />
@@ -520,7 +520,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709418144514</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="fixed some tests">
+      <option name="closed" value="true" />
+      <created>1709419714053</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1709419714053</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +546,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed project structure" />
     <MESSAGE value="pass add&amp;get piece" />
     <MESSAGE value="added classes;pass move, position" />
     <MESSAGE value="pass bishop" />
@@ -563,7 +570,8 @@
     <MESSAGE value="login works" />
     <MESSAGE value="static files passes" />
     <MESSAGE value="all tests pass" />
-    <option name="LAST_COMMIT_MESSAGE" value="all tests pass" />
+    <MESSAGE value="fixed some tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
