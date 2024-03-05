@@ -180,3 +180,30 @@ alter: edit table
 to get the amount of rows select count from variable
 
 joining tables in slides
+
+
+### March 5th
+
+database management obj is different than DAOS
+
+JDBC(java database connector)
+
+1. get a connection: return DriverManager.getConnection
+2. prepare a statement: var preparedStmt = conn. prepareStmt("XSELECT 1+1")
+3. execute: res= preparedStmt.execute Query(); res.next(need to increment b/c you won't be on the result automatically);
+
+use a try/catch when you make the connection
+
+? leave a spot for a parameter
+
+infrastructure as code
+call create database then create the tables if they don't exist
+because createDatabase only creates databases and only needs to be called once
+
+return generated keys
+
+
+**Security**
+
+
+
