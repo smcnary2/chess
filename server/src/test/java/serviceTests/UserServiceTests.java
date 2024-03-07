@@ -44,7 +44,7 @@ public class UserServiceTests {
     }
 
     @Test
-    void registerUser() {
+    void registerUser() throws DataAccessException {
         var userService = new UserService();
         var req = new UserRequests("joe", "pw", "joe@joe.com");
 
@@ -55,7 +55,7 @@ public class UserServiceTests {
     }
 
     @Test
-    void resisterUserInvalidReq() {
+    void resisterUserInvalidReq() throws DataAccessException {
         var userService = new UserService();
         var req = new UserRequests("joe", null, "joe@joe.com");
 
@@ -66,7 +66,7 @@ public class UserServiceTests {
 
 
     @Test
-    void loginUser(){
+    void loginUser() throws DataAccessException {
         var userService = new UserService();
         var createUser = new UserRequests("joe", "pw", "joe@joe.com");
         Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));
@@ -79,7 +79,7 @@ public class UserServiceTests {
         Assertions.assertEquals("joe", res.getUsername());
     }
     @Test
-    void loginInvalidReq(){
+    void loginInvalidReq() throws DataAccessException {
         var userService = new UserService();
         var createUser = new UserRequests("joe", "pw", "joe@joe.com");
         Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));
@@ -91,7 +91,7 @@ public class UserServiceTests {
         Assertions.assertNull(res);
     }
     @Test
-    void loginWrongPw(){
+    void loginWrongPw() throws DataAccessException {
         var userService = new UserService();
         var createUser = new UserRequests("joe", "pw", "joe@joe.com");
         Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));
@@ -104,7 +104,7 @@ public class UserServiceTests {
     }
 
     @Test
-    void logoutUser(){
+    void logoutUser() throws DataAccessException {
         var userService = new UserService();
         var createUser = new UserRequests("joe", "pw", "joe@joe.com");
         var token = Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));
@@ -117,7 +117,7 @@ public class UserServiceTests {
     }
 
     @Test
-    void logoutUserInvalidReq(){
+    void logoutUserInvalidReq() throws DataAccessException {
         var userService = new UserService();
         var createUser = new UserRequests("joe", "pw", "joe@joe.com");
         var token = Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));
@@ -211,7 +211,7 @@ public class UserServiceTests {
     }
 
     @Test
-    void joinGame() {
+    void joinGame() throws DataAccessException {
         var userService = new UserService();
         var createUser = new UserRequests("joe", "pw", "joe@joe.com");
         var token = Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));
@@ -241,7 +241,7 @@ public class UserServiceTests {
 
     }
     @Test
-    void joinGameInvalidReq(){
+    void joinGameInvalidReq() throws DataAccessException {
         var userService = new UserService();
         var createUser = new UserRequests("joe", "null", "joe@joe.com");
         var token = Assertions.assertDoesNotThrow(() -> userService.registerUser(createUser));

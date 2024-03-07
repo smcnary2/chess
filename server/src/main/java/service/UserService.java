@@ -13,7 +13,7 @@ public class UserService {
     public UsersDAO pushToUserDAO;
     public AuthDAO pushToAuthDAO;
 
-    public UserService(){
+    public UserService() throws DataAccessException {
         pushToAuthDAO = new AuthDAO();
         pushToUserDAO = new UsersDAO();
         pushToUserDAO.databasePlaceholder.size();
