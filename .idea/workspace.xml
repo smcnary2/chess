@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="phase 4 setup">
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="UserDAO creates tables">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/UsersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/UsersDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/serviceTests/UserServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/serviceTests/UserServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +236,7 @@
       <workItem from="1709062369860" duration="25558000" />
       <workItem from="1709233974562" duration="28174000" />
       <workItem from="1709675110819" duration="4893000" />
-      <workItem from="1709770980844" duration="7862000" />
+      <workItem from="1709770980844" duration="16236000" />
     </task>
     <task id="LOCAL-00001" summary="fixed repo">
       <option name="closed" value="true" />
@@ -544,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709681494862</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="UserDAO creates tables">
+      <option name="closed" value="true" />
+      <created>1709842297066</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1709842297066</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pass bishop" />
     <MESSAGE value="pass pawn" />
     <MESSAGE value="pass rook" />
     <MESSAGE value="pass queen" />
@@ -587,7 +592,8 @@
     <MESSAGE value="fixed some tests" />
     <MESSAGE value="fixed naming" />
     <MESSAGE value="phase 4 setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="phase 4 setup" />
+    <MESSAGE value="UserDAO creates tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserDAO creates tables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -778,7 +784,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java</url>
-          <line>42</line>
+          <line>45</line>
           <option name="timeStamp" value="319" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -807,19 +813,24 @@
           <option name="timeStamp" value="327" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/UsersDAO.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="328" />
+          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="334" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/UsersDAO.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="329" />
+          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="336" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/DatabaseManager.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="330" />
+          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="338" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="341" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

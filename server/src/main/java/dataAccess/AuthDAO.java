@@ -3,21 +3,23 @@ package dataAccess;
 import com.google.gson.Gson;
 import model.AuthData;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 import java.util.HashMap;
 import java.util.Map;
+import java.sql.*;
 
 import static java.sql.Statement.RETURN_GENERATED_KEYS;
 import static java.sql.Types.NULL;
 
 public class AuthDAO {
     public static Map<String, AuthData> token = new HashMap<>();
-
+    public AuthDAO() throws DataAccessException {
+        initializeDatabase();
+    }
     //find authorization
     public AuthData findAuth(String auth) throws DataAccessException {
         try (var conn = DatabaseManager.getConnection()) {
-            var statement = "SELECT id, json FROM pet WHERE authToken=?";
+            var statement = "SELECT authtoken, json FROM authchess WHERE authtoken = ?";
             try (var ps = conn.prepareStatement(statement)) {
                 ps.setString(1, auth);
                 try (var rs = ps.executeQuery()) {
@@ -26,16 +28,17 @@ public class AuthDAO {
                     }
                 }
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            e.printStackTrace();
             throw new DataAccessException("Unable to configure database");
         }
         return null;
     }
 
     private AuthData readAuth(ResultSet rs) throws SQLException {
-        var id = rs.getInt("id");
         var json = rs.getString("json");
         var AuthData = new Gson().fromJson(json, AuthData.class);
+        System.out.print(AuthData);
         return AuthData;
     }
 
