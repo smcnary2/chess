@@ -14,18 +14,21 @@ public class Server {
         Spark.staticFiles.location("web");
 
         UserService userService = null;
+        GameService gameService = null;
         try {
             userService = new UserService();
+            gameService = new GameService();
         } catch (DataAccessException e) {
             throw new RuntimeException(e);
         }
-        GameService gameService = new GameService();
 
-
+        GameService finalGameService = gameService;
+        UserService finalUserService = userService;
 
         //clear Request
-        UserService finalUserService = userService;
-        Spark.delete("/db", (request, response) -> new Handlers().clearHandler(request, response, finalUserService,gameService));//not complete
+
+
+        Spark.delete("/db", (request, response) -> new Handlers().clearHandler(request, response, finalUserService, finalGameService));//not complete
         // Register your endpoints and handle exceptions here.
         Spark.post("/user", (request, response) -> new Handlers().registerHandler(request, response, finalUserService));
         //login:get?
@@ -35,12 +38,12 @@ public class Server {
         Spark.delete("/session", ((request, response) -> new Handlers().logoutHandler(request, response, finalUserService)));//works now
 
         //list games: get
-        Spark.get("/game", (request, response) -> new Handlers().listGameHandler(request, response,finalUserService, gameService));
+        Spark.get("/game", (request, response) -> new Handlers().listGameHandler(request, response,finalUserService, finalGameService));
 
         //new game
-        Spark.post("/game", ((request, response) -> new Handlers().newGameHandler(request, response, finalUserService, gameService)));//works
+        Spark.post("/game", ((request, response) -> new Handlers().newGameHandler(request, response, finalUserService, finalGameService)));//works
         //join game
-        Spark.put("/game", (request, response) -> new Handlers().joinGameHandler(request,response,finalUserService,gameService));//working on it
+        Spark.put("/game", (request, response) -> new Handlers().joinGameHandler(request,response,finalUserService,finalGameService));//working on it
 
 
         Spark.awaitInitialization();

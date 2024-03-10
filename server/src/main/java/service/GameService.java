@@ -10,7 +10,7 @@ import java.util.UUID;
 
 public class GameService {
     public GameDAO pushRequest;
-    public GameService(){
+    public GameService() throws DataAccessException {
         pushRequest = new GameDAO();
     }
 

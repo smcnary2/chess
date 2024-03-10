@@ -13,9 +13,10 @@ import static java.sql.Types.NULL;
 public class GameDAO {
     public List<WebGame> listOfGames;
 
-    public GameDAO() {
+    public GameDAO() throws DataAccessException {
 
         listOfGames = new ArrayList<>();
+        initializeDatabase();
     }
 
     public void insertGame(WebGame newGame) throws DataAccessException {// I'm not sure how claim color works
@@ -87,11 +88,12 @@ public class GameDAO {
 
     private final String [] createStatements = {
             """
-            CREATE TABLE IF NOT EXISTS  usersChess (
-              `row` int NOT NULL AUTO_INCREMENT,
-              `username` varchar(256) NOT NULL,
-              `password` varchar(256) NOT NULL,
-              `email` varchar(256) NOT NULL,
+            CREATE TABLE IF NOT EXISTS  gameChess (
+              `gameID` int NOT NULL,
+              `white_username` varchar(256) TEXT DEFAULT NULL,
+              `black_username` varchar(256) TEXT DEFAULT NULL,
+              `game_name` varchar(256) NOT NULL,
+              `chess_game` NOT NULL,
               `json` TEXT DEFAULT NULL,
               PRIMARY KEY (`row`),
               INDEX(password),
