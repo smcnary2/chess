@@ -42,14 +42,17 @@ public class AuthDAO {
         return AuthData;
     }
 
-    public void delete(String user) {
-        token.remove(user);
+    public void delete(String user) throws DataAccessException {
         // remove key or replace the authorization?
+        var statement = "DELETE FROM authChess WHERE authToken = ?";
+
+        executeUpdate(statement, user);
     }
 
-    public void clear() {
+    public void clear() throws DataAccessException {
         //deletes all instances
-        token.clear();
+        var statement = "TRUNCATE authChess";
+        executeUpdate(statement);
 
     }
 
@@ -58,10 +61,6 @@ public class AuthDAO {
         var statement = "INSERT INTO authChess (authToken, username, json) VALUES (?, ?, ?)";
         var json = new Gson().toJson(t);
         executeUpdate(statement, t.getAuthToken(), t.getUsername(), json);
-    }
-
-    public boolean isEmpty(){
-        return token.isEmpty();
     }
 
     private int executeUpdate(String statement, Object... params) throws DataAccessException{

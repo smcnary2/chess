@@ -16,7 +16,7 @@ public class UserService {
     public UserService() throws DataAccessException {
         pushToAuthDAO = new AuthDAO();
         pushToUserDAO = new UsersDAO();
-        pushToUserDAO.databasePlaceholder.size();
+
     }
 
     public AuthData registerUser(UserRequests newrequest)throws DataAccessException{

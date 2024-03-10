@@ -3,6 +3,7 @@ package dataAccess;
 import com.google.gson.Gson;
 import model.User;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +12,10 @@ import static java.sql.Statement.RETURN_GENERATED_KEYS;
 import static java.sql.Types.NULL;
 
 public class UsersDAO {
-    public List<User> databasePlaceholder;
+
 
     public UsersDAO() throws DataAccessException {
-        databasePlaceholder= new ArrayList<>();
+
         initializeDatabase();
     }
     public void insertUser(User newUser) throws DataAccessException {// insert user
@@ -24,25 +25,53 @@ public class UsersDAO {
         System.out.print(id);
 
     }
-    public void clearAllUsers() {
-        databasePlaceholder = new ArrayList<>();
+    public void clearAllUsers() throws DataAccessException {
+        var statement = "TRUNCATE userschess";
+        executeUpdate(statement);
 
     }
     public List<User> findAllUsers() throws DataAccessException {
-        return databasePlaceholder;//is this safe
+        var result = new ArrayList<User>();
+        try (var conn = DatabaseManager.getConnection()) {
+            var statement = "SELECT username, password, json FROM userschess";
+            try (var ps = conn.prepareStatement(statement)) {
+                try (var rs = ps.executeQuery()) {
+                    while (rs.next()) {
+                        result.add(readUser(rs));
+                    }
+                }
+            }
+        } catch (Exception e) {
+            throw new DataAccessException("Unable to read data");
+        }
+        return result;
     }
 
     public User findUser(User newUser) throws DataAccessException {
-        for (User x :
-                databasePlaceholder) {
-            if (x.getUsername().equals(newUser.getUsername())) {
-                if (x.getPassword().equals(newUser.getPassword())) {
-                    return x;//what am I supposed to return here
+        try (var conn = DatabaseManager.getConnection()) {
+            var statement = "SELECT username, password, json FROM userschess WHERE username = ? AND password = ?";
+            try (var ps = conn.prepareStatement(statement)) {
+                ps.setString(1, newUser.username);
+                ps.setString(2,newUser.password);
+                try (var rs = ps.executeQuery()) {
+                    if (rs.next()) {
+                        return readUser(rs);
+                    }
                 }
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new DataAccessException("Unable to configure database");
         }
         return null;
     }
+    private User readUser(ResultSet rs) throws SQLException {
+        var json = rs.getString("json");
+        var  user= new Gson().fromJson(json, User.class);
+        System.out.print(user);
+        return user;
+    }
+
 
     private int executeUpdate(String statement, Object... params) throws DataAccessException{
         try(var conn = DatabaseManager.getConnection()){
