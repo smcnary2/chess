@@ -1,11 +1,12 @@
 package dataAccess;
 
+import com.google.gson.Gson;
 import model.WebGame;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import static java.sql.Statement.RETURN_GENERATED_KEYS;
 import static java.sql.Types.NULL;
@@ -20,21 +21,38 @@ public class GameDAO {
     }
 
     public void insertGame(WebGame newGame) throws DataAccessException {// I'm not sure how claim color works
-        listOfGames.add(newGame);
+        var statement = "INSERT INTO gameChess (gameID, game_name , json) VALUES (?,?,?)";
+        var json = new Gson().toJson(newGame);
+        executeUpdate(statement, newGame.getGameID(), newGame.getGameName(), json);
     }
 
     public List<WebGame> findAllGames() throws DataAccessException {
-        return listOfGames;// am I supposed to return this formatted
+        var result = new ArrayList<WebGame>();
+        try (var conn = DatabaseManager.getConnection()) {
+            var statement = "SELECT gameID, game_name, json FROM gamechess";
+            try (var ps = conn.prepareStatement(statement)) {
+                try (var rs = ps.executeQuery()) {
+                    while (rs.next()) {
+                        result.add(readGame(rs));
+                    }
+                }
+            }
+        } catch (Exception e) {
+            throw new DataAccessException("Unable to read data");
+        }
+        return result;
     }
 
     public int joinGameInDAO(String playerColor, int gameID, String username)throws DataAccessException{
         int index = findGame(gameID);
         if( index != -1){
-            if(Objects.equals(listOfGames.get(index).getWhiteUsername(), null)&&playerColor.equals("WHITE")){
-                listOfGames.get(index).setWhiteUsername(username);
+            if(playerColor.equals("WHITE")){
+                var statement = "UPDATE gameChess SET white_username = ? WHERE gameID = ? AND white_username IS NULL";
+                executeUpdate(statement, username, gameID);
                 return 200;
-            } else if (Objects.equals(listOfGames.get(index).getBlackUsername(), null) &&playerColor.equals("BLACK")) {
-                listOfGames.get(index).setBlackUsername(username);
+            } else if (playerColor.equals("BLACK")) {
+                var statement = "UPDATE gameChess SET black_username = ? WHERE gameID = ? AND black_username IS NULL";
+                executeUpdate(statement, username, gameID);
                 return 200;
             }else{
                 return 403;//observer not quite so sure what to put here
@@ -51,15 +69,30 @@ public class GameDAO {
         return 400;
     }
     public int findGame(int gameid) throws DataAccessException {// am I supposed to haev this
-        for (int i = 0; i < listOfGames.size(); i++) {
-            if (listOfGames.get(i).getGameID() == (gameid)) {
-                return i;
+        try (var conn = DatabaseManager.getConnection()) {
+            var statement = "SELECT gameID, json FROM gameChess WHERE gameID=?";
+            try (var ps = conn.prepareStatement(statement)) {
+                ps.setInt(1, gameid);
+                try (var rs = ps.executeQuery()) {
+                    if (rs.next()) {
+                        return readGame(rs).getGameID();
+                    }
+                }
             }
+        } catch (Exception e) {
+            throw new DataAccessException(String.format("Unable to read data"));
         }
         return -1;
     }
+
+    private WebGame readGame(ResultSet rs) throws SQLException {
+        var json = rs.getString("json");
+        var newgame = new Gson().fromJson(json, WebGame.class);
+        return newgame;
+    }
     public void clearGame() throws DataAccessException {
-        listOfGames = new ArrayList<>();
+        var statement = "TRUNCATE gameChess";
+        executeUpdate(statement);
     }
 
     private int executeUpdate(String statement, Object... params) throws DataAccessException{
@@ -81,6 +114,7 @@ public class GameDAO {
                 return 0;
             }
         }catch (SQLException ex){
+            ex.printStackTrace();
             throw new DataAccessException("Unable to configure database");
         }
 
@@ -89,15 +123,17 @@ public class GameDAO {
     private final String [] createStatements = {
             """
             CREATE TABLE IF NOT EXISTS  gameChess (
-              `gameID` int NOT NULL,
-              `white_username` varchar(256) TEXT DEFAULT NULL,
-              `black_username` varchar(256) TEXT DEFAULT NULL,
+              `row` int NOT NULL AUTO_INCREMENT,
               `game_name` varchar(256) NOT NULL,
-              `chess_game` NOT NULL,
+              `gameID` int NOT NULL,
+              `white_username` varchar(256) DEFAULT NULL,
+              `black_username` varchar(256) DEFAULT NULL,
               `json` TEXT DEFAULT NULL,
               PRIMARY KEY (`row`),
-              INDEX(password),
-              INDEX(email)
+              INDEX(white_username),
+              INDEX(black_username),
+              INDEX(game_name),
+              INDEX(gameID)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
             """
     };

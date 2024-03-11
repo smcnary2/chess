@@ -41,5 +41,8 @@ public class WebGame {
         return gameName;
     }
 
+    public ChessGame getGames() {
+        return games;
+    }
 
 }
