@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="cleaned up code">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/dataAccessTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/dataAccessTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="finished phase 4" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -229,7 +225,7 @@
       <workItem from="1709062369860" duration="25558000" />
       <workItem from="1709233974562" duration="28174000" />
       <workItem from="1709675110819" duration="4893000" />
-      <workItem from="1709770980844" duration="42301000" />
+      <workItem from="1709770980844" duration="42573000" />
     </task>
     <task id="LOCAL-00001" summary="fixed repo">
       <option name="closed" value="true" />
@@ -607,7 +603,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710271273956</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="finished phase 4">
+      <option name="closed" value="true" />
+      <created>1710278961980</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1710278961980</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,7 +629,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="renamed variables and removed dead code" />
     <MESSAGE value="update notes" />
     <MESSAGE value="added comments" />
     <MESSAGE value="deleted code" />
@@ -650,7 +653,8 @@
     <MESSAGE value="passes tests from last phase" />
     <MESSAGE value="passes persistence test" />
     <MESSAGE value="cleaned up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned up code" />
+    <MESSAGE value="finished phase 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished phase 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -821,7 +825,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java</url>
-          <line>47</line>
+          <line>45</line>
           <option name="timeStamp" value="343" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

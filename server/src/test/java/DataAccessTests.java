@@ -9,12 +9,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class dataAccessTests {
+public class DataAccessTests {
     UsersDAO userdao;
     GameDAO gamedao ;
     AuthDAO authdao ;
 
-    public dataAccessTests() throws DataAccessException {
+    public DataAccessTests() throws DataAccessException {
         userdao = new UsersDAO();
         gamedao = new GameDAO();
         authdao = new AuthDAO();
