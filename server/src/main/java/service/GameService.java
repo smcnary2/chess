@@ -36,6 +36,7 @@ public class GameService {
         }else{
             errorcode = pushRequest.watchGame(requests.getGameID(), requests.getUser());
         }
+
         requests.error = errorcode;
 
     }

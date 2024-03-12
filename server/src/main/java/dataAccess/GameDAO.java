@@ -48,23 +48,29 @@ public class GameDAO {
         if( index != null){
 
             if(playerColor.equals("WHITE")){
-                var statement = "UPDATE gameChess SET white_username = ? WHERE gameID = ? AND white_username IS NULL";
+                var statement = "UPDATE gameChess SET json = ? WHERE gameID = ? AND white_username IS NULL";
                 index.setWhiteUsername(username);
                 var json = new Gson().toJson(index);
-                executeUpdate(statement, username, gameID);
-                statement = "UPDATE gameChess SET json = ? WHERE gameID = ? AND white_username IS NULL";
                 executeUpdate(statement, json, gameID);
-                return 200;
+                statement = "UPDATE gameChess SET white_username = ? WHERE gameID = ? AND white_username IS NULL";
+                executeUpdate(statement, username, gameID);
+                if(findGame(gameID).getWhiteUsername().equals(username)){
+                    return 200;
+                }else {
+                    return 403;
+                }
             } else if (playerColor.equals("BLACK")) {
-                var statement = "UPDATE gameChess SET black_username = ? WHERE gameID = ? AND black_username IS NULL";
                 index.setBlackUsername(username);
                 var json = new Gson().toJson(index);
-                executeUpdate(statement, username, gameID);
-                statement = "UPDATE gameChess SET json = ? WHERE gameID = ? AND white_username IS NULL";
+                var statement = "UPDATE gameChess SET json = ? WHERE gameID = ? AND black_username IS NULL";
                 executeUpdate(statement, json, gameID);
-                return 200;
-            }else{
-                return 403;//observer not quite so sure what to put here
+                statement = "UPDATE gameChess SET black_username = ? WHERE gameID = ? AND black_username IS NULL";
+                executeUpdate(statement, username, gameID);
+                if(findGame(gameID).getBlackUsername().equals(username)){
+                    return 200;
+                }else {
+                    return 403;
+                }
             }
 
         }

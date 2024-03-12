@@ -119,7 +119,11 @@ public class Handlers {
         }else{
             userReq.error = 200;
         }
-
+        if(userReq.getGameName() == null){
+            userReq.error = 403;
+            response.status(userReq.error);
+            return gson.toJson(new ErrorMessage("error: invalid syntax"));
+        }
         var game = gameService.newGame(userReq);
 
         response.status(userReq.error);

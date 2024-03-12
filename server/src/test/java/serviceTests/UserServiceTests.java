@@ -240,12 +240,12 @@ public class UserServiceTests {
         req.setUsername(createUser.getUser());
         Assertions.assertDoesNotThrow(() -> gameService.joinGame(req));
         var index = Assertions.assertDoesNotThrow(() -> gameService.pushRequest.findGame(game.getGameID()));
-        Assertions.assertEquals("joe",gameService.pushRequest.listOfGames.get(index.getGameID()).getBlackUsername());
+        Assertions.assertEquals("joe",gameService.pushRequest.findGame(game.getGameID()).getBlackUsername());
 
         var req2 = new UserRequests("BLACK", game.getGameID());
         req2.setUsername(createUser2.getUser());
         Assertions.assertDoesNotThrow(() -> gameService.joinGame(req2));
-        Assertions.assertEquals("joe",gameService.pushRequest.listOfGames.get(index.getGameID()).getBlackUsername(),"assigned black when already assigned");
+        Assertions.assertEquals("joe",gameService.pushRequest.findGame(game.getGameID()).getBlackUsername(),"assigned black when already assigned");
 
     }
     @Test
@@ -267,7 +267,7 @@ public class UserServiceTests {
         Assertions.assertDoesNotThrow(() -> gameService.joinGame(req));
         var index = Assertions.assertDoesNotThrow(() -> gameService.pushRequest.findGame(game.getGameID()));
 
-        Assertions.assertEquals(null,gameService.pushRequest.listOfGames.get(index.getGameID()).getBlackUsername());
+        Assertions.assertEquals(null,gameService.pushRequest.findGame(game.getGameID()).getBlackUsername());
     }
 
 
