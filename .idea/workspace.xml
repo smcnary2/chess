@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="fixed server error">
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="gameDAO works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/model/WebGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/model/WebGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/UsersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/UsersDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/java/serviceTests/UserServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/serviceTests/UserServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +60,7 @@
     "Application.Main.executor": "Run",
     "Application.Server.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.PersistenceTests.executor": "Run",
     "JUnit.StandardAPITests.badAuthJoin.executor": "Run",
     "JUnit.StandardAPITests.badColorJoin.executor": "Run",
     "JUnit.StandardAPITests.clearData.executor": "Run",
@@ -121,10 +123,25 @@
       <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\java\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.UserServiceTests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersistenceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.PersistenceTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -144,7 +161,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTests.createGameInvalidReq" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTests.registerUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
@@ -154,13 +171,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="serviceTests" />
       <option name="MAIN_CLASS_NAME" value="serviceTests.UserServiceTests" />
-      <option name="METHOD_NAME" value="createGameInvalidReq" />
+      <option name="METHOD_NAME" value="registerUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTests.joinGameInvalidReq" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTests.resisterUserInvalidReq" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
@@ -170,23 +187,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="serviceTests" />
       <option name="MAIN_CLASS_NAME" value="serviceTests.UserServiceTests" />
-      <option name="METHOD_NAME" value="joinGameInvalidReq" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTests.listgamesInvalidReq" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="serviceTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="serviceTests" />
-      <option name="MAIN_CLASS_NAME" value="serviceTests.UserServiceTests" />
-      <option name="METHOD_NAME" value="listgamesInvalidReq" />
+      <option name="METHOD_NAME" value="resisterUserInvalidReq" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -194,11 +195,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.UserServiceTests" />
-        <item itemvalue="JUnit.UserServiceTests.createGameInvalidReq" />
-        <item itemvalue="JUnit.UserServiceTests.listgamesInvalidReq" />
-        <item itemvalue="JUnit.UserServiceTests.joinGameInvalidReq" />
+        <item itemvalue="JUnit.UserServiceTests.registerUser" />
+        <item itemvalue="JUnit.UserServiceTests.resisterUserInvalidReq" />
+        <item itemvalue="JUnit.PersistenceTests" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -234,7 +235,7 @@
       <workItem from="1709062369860" duration="25558000" />
       <workItem from="1709233974562" duration="28174000" />
       <workItem from="1709675110819" duration="4893000" />
-      <workItem from="1709770980844" duration="26703000" />
+      <workItem from="1709770980844" duration="30760000" />
     </task>
     <task id="LOCAL-00001" summary="fixed repo">
       <option name="closed" value="true" />
@@ -572,7 +573,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710110249000</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="gameDAO works">
+      <option name="closed" value="true" />
+      <created>1710192239187</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1710192239187</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +599,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pass king" />
     <MESSAGE value="pass knight" />
     <MESSAGE value="pass all tests" />
     <MESSAGE value="fixed ChessPiece" />
@@ -615,7 +623,8 @@
     <MESSAGE value="AuthDAO tables work" />
     <MESSAGE value="AuthDAO login and logout work" />
     <MESSAGE value="fixed server error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed server error" />
+    <MESSAGE value="gameDAO works" />
+    <option name="LAST_COMMIT_MESSAGE" value="gameDAO works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -692,7 +701,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/test/java/serviceTests/UserServiceTests.java</url>
-          <line>53</line>
+          <line>62</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
           </properties>
@@ -700,7 +709,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/test/java/serviceTests/UserServiceTests.java</url>
-          <line>162</line>
+          <line>170</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
           </properties>
@@ -708,7 +717,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/test/java/serviceTests/UserServiceTests.java</url>
-          <line>168</line>
+          <line>176</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
           </properties>
@@ -821,12 +830,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java</url>
-          <line>48</line>
+          <line>49</line>
           <option name="timeStamp" value="326" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java</url>
-          <line>52</line>
+          <line>57</line>
           <option name="timeStamp" value="327" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -836,8 +845,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java</url>
-          <line>138</line>
+          <line>147</line>
           <option name="timeStamp" value="346" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/handlers/Handlers.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="348" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

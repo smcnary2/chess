@@ -12,20 +12,22 @@ import static java.sql.Statement.RETURN_GENERATED_KEYS;
 import static java.sql.Types.NULL;
 
 public class UsersDAO {
-
+    public int count;
 
     public UsersDAO() throws DataAccessException {
-
+        count = 0;
         initializeDatabase();
     }
     public void insertUser(User newUser) throws DataAccessException {// insert user
         var statement = "INSERT INTO usersChess (username, password, email, json) VALUES(?,?,?,?)";
         var json = new Gson().toJson(newUser);
         Object id = executeUpdate(statement,newUser.username, newUser.password, newUser.email, json);
+        count = count+1;
         System.out.print(id);
 
     }
     public void clearAllUsers() throws DataAccessException {
+        count = 0;
         var statement = "TRUNCATE userschess";
         executeUpdate(statement);
 
@@ -42,12 +44,16 @@ public class UsersDAO {
                 }
             }
         } catch (Exception e) {
+            e.printStackTrace();
             throw new DataAccessException("Unable to read data");
         }
         return result;
     }
 
     public User findUser(User newUser) throws DataAccessException {
+        if(count == 0){
+            return null;
+        }
         try (var conn = DatabaseManager.getConnection()) {
             var statement = "SELECT username, password, json FROM userschess WHERE username = ? AND password = ?";
             try (var ps = conn.prepareStatement(statement)) {

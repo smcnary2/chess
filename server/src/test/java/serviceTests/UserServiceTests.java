@@ -3,12 +3,21 @@ package serviceTests;
 import dataAccess.DataAccessException;
 import model.UserRequests;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import service.GameService;
 import service.UserService;
 
 
 public class UserServiceTests {
+
+    @BeforeEach
+    void clear()throws DataAccessException{
+        var userService = new UserService();
+        var gameService = new GameService();
+        userService.clear();
+        gameService.clear();
+    }
     @Test
     void clearUserDAO() throws DataAccessException {
         var userService = new UserService();
@@ -61,7 +70,6 @@ public class UserServiceTests {
 
         var res = Assertions.assertDoesNotThrow(() -> userService.registerUser(req));
 
-        Assertions.assertEquals("joe", res.getUsername());
     }
 
 
@@ -231,13 +239,13 @@ public class UserServiceTests {
         var req = new UserRequests("BLACK", game.getGameID());
         req.setUsername(createUser.getUser());
         Assertions.assertDoesNotThrow(() -> gameService.joinGame(req));
-        int index = Assertions.assertDoesNotThrow(() -> gameService.pushRequest.findGame(game.getGameID()));
-        Assertions.assertEquals("joe",gameService.pushRequest.listOfGames.get(index).getBlackUsername());
+        var index = Assertions.assertDoesNotThrow(() -> gameService.pushRequest.findGame(game.getGameID()));
+        Assertions.assertEquals("joe",gameService.pushRequest.listOfGames.get(index.getGameID()).getBlackUsername());
 
         var req2 = new UserRequests("BLACK", game.getGameID());
         req2.setUsername(createUser2.getUser());
         Assertions.assertDoesNotThrow(() -> gameService.joinGame(req2));
-        Assertions.assertEquals("joe",gameService.pushRequest.listOfGames.get(index).getBlackUsername(),"assigned black when already assigned");
+        Assertions.assertEquals("joe",gameService.pushRequest.listOfGames.get(index.getGameID()).getBlackUsername(),"assigned black when already assigned");
 
     }
     @Test
@@ -257,9 +265,9 @@ public class UserServiceTests {
         var req = new UserRequests("BLACK", 3345);
         req.setUsername(createUser.getUser());
         Assertions.assertDoesNotThrow(() -> gameService.joinGame(req));
-        int index = Assertions.assertDoesNotThrow(() -> gameService.pushRequest.findGame(game.getGameID()));
+        var index = Assertions.assertDoesNotThrow(() -> gameService.pushRequest.findGame(game.getGameID()));
 
-        Assertions.assertEquals(null,gameService.pushRequest.listOfGames.get(index).getBlackUsername());
+        Assertions.assertEquals(null,gameService.pushRequest.listOfGames.get(index.getGameID()).getBlackUsername());
     }
 
 

@@ -25,15 +25,15 @@ public class UserService {
             if (x.getUsername().equals(newrequest.getUser())) {
                 //403 error already taken
                 newrequest.error = 403;
-                return new AuthData(null,"Error: already taken");
+                return new AuthData(null,"Error: name already taken");
             }
             if (x.getEmail().equals(newrequest.getEmail())) {
                 //403 error already taken
                 newrequest.error = 403;
-                return new AuthData(null,"Error: already taken");
+                return new AuthData(null,"Error: email already taken");
             }
         }
-        if (newrequest.error == 200) {
+        if (newrequest.error == 200 && newrequest.getPassword() != null) {
             User newUser = new User(newrequest.getUser(), newrequest.getPassword(), newrequest.getEmail());
             pushToUserDAO.insertUser(newUser);
             //System.out.println(pushToUserDAO.findUser(newUser));
@@ -42,7 +42,7 @@ public class UserService {
             return pushToAuthDAO.findAuth(t.getAuthToken());
         }
 
-        return null;
+        return new AuthData(null, "Error");
     }
 
     public void clear() throws DataAccessException{

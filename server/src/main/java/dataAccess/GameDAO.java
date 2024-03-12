@@ -44,15 +44,24 @@ public class GameDAO {
     }
 
     public int joinGameInDAO(String playerColor, int gameID, String username)throws DataAccessException{
-        int index = findGame(gameID);
-        if( index != -1){
+        WebGame index = findGame(gameID);
+        if( index != null){
+
             if(playerColor.equals("WHITE")){
                 var statement = "UPDATE gameChess SET white_username = ? WHERE gameID = ? AND white_username IS NULL";
+                index.setWhiteUsername(username);
+                var json = new Gson().toJson(index);
                 executeUpdate(statement, username, gameID);
+                statement = "UPDATE gameChess SET json = ? WHERE gameID = ? AND white_username IS NULL";
+                executeUpdate(statement, json, gameID);
                 return 200;
             } else if (playerColor.equals("BLACK")) {
                 var statement = "UPDATE gameChess SET black_username = ? WHERE gameID = ? AND black_username IS NULL";
+                index.setBlackUsername(username);
+                var json = new Gson().toJson(index);
                 executeUpdate(statement, username, gameID);
+                statement = "UPDATE gameChess SET json = ? WHERE gameID = ? AND white_username IS NULL";
+                executeUpdate(statement, json, gameID);
                 return 200;
             }else{
                 return 403;//observer not quite so sure what to put here
@@ -62,27 +71,27 @@ public class GameDAO {
         return 400;//game doesnt exist
     }
     public int watchGame(int gameID, String username)throws DataAccessException{
-        int index = findGame(gameID);
-        if( index != -1){
+        var index = findGame(gameID);
+        if( index != null){
             return 200;
         }
         return 400;
     }
-    public int findGame(int gameid) throws DataAccessException {// am I supposed to haev this
+    public WebGame findGame(int gameid) throws DataAccessException {// am I supposed to haev this
         try (var conn = DatabaseManager.getConnection()) {
             var statement = "SELECT gameID, json FROM gameChess WHERE gameID=?";
             try (var ps = conn.prepareStatement(statement)) {
                 ps.setInt(1, gameid);
                 try (var rs = ps.executeQuery()) {
                     if (rs.next()) {
-                        return readGame(rs).getGameID();
+                        return readGame(rs);
                     }
                 }
             }
         } catch (Exception e) {
             throw new DataAccessException(String.format("Unable to read data"));
         }
-        return -1;
+        return null;
     }
 
     private WebGame readGame(ResultSet rs) throws SQLException {
