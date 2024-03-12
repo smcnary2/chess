@@ -51,67 +51,67 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Main.executor": "Run",
-    "Application.Server.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.PersistenceTests.executor": "Run",
-    "JUnit.PersistenceTests.persistenceTest.executor": "Run",
-    "JUnit.StandardAPITests.badAuthJoin.executor": "Run",
-    "JUnit.StandardAPITests.badColorJoin.executor": "Run",
-    "JUnit.StandardAPITests.clearData.executor": "Run",
-    "JUnit.StandardAPITests.executor": "Run",
-    "JUnit.StandardAPITests.failLogout.executor": "Run",
-    "JUnit.StandardAPITests.failRegister.executor": "Debug",
-    "JUnit.StandardAPITests.goodCreate.executor": "Run",
-    "JUnit.StandardAPITests.registerTwice.executor": "Run",
-    "JUnit.StandardAPITests.staticFiles.executor": "Run",
-    "JUnit.StandardAPITests.successLogin.executor": "Run",
-    "JUnit.StandardAPITests.successLogout.executor": "Run",
-    "JUnit.StandardAPITests.uniqueAuthorizationTokens.executor": "Run",
-    "JUnit.UserServiceTests.clearUserDAO.executor": "Run",
-    "JUnit.UserServiceTests.createGame.executor": "Run",
-    "JUnit.UserServiceTests.createGameInvalidReq.executor": "Run",
-    "JUnit.UserServiceTests.executor": "Run",
-    "JUnit.UserServiceTests.joinGame.executor": "Run",
-    "JUnit.UserServiceTests.joinGameInvalidReq.executor": "Run",
-    "JUnit.UserServiceTests.listgames.executor": "Run",
-    "JUnit.UserServiceTests.listgamesInvalidReq.executor": "Run",
-    "JUnit.UserServiceTests.loginInvalidReq.executor": "Run",
-    "JUnit.UserServiceTests.loginUser.executor": "Run",
-    "JUnit.UserServiceTests.loginWrongPw.executor": "Run",
-    "JUnit.UserServiceTests.logoutUser.executor": "Run",
-    "JUnit.UserServiceTests.registerUser.executor": "Run",
-    "JUnit.UserServiceTests.resisterUserInvalidReq.executor": "Run",
-    "JUnit.dataAccessTests.executor": "Run",
-    "JUnit.dataAccessTests.insertUserTest.executor": "Run",
-    "JUnit.dataAccessTests.invalidfindUserTest.executor": "Run",
-    "JUnit.passoffTests.serverTests in server.executor": "Run",
-    "JUnit.serviceTests in server.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "18",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/sofia/IdeaProjects/chess/server/lib/passoff-dependencies.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "inlay.hints",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.PersistenceTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersistenceTests.persistenceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.badAuthJoin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.badColorJoin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.clearData.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.failLogout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.failRegister.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.StandardAPITests.goodCreate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.registerTwice.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.staticFiles.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.successLogin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.successLogout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.uniqueAuthorizationTokens.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.clearUserDAO.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.createGame.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.createGameInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.joinGame.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.joinGameInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.listgames.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.listgamesInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.loginInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.loginUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.loginWrongPw.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.logoutUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.registerUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.resisterUserInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.dataAccessTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.dataAccessTests.insertUserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.dataAccessTests.invalidfindUserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.passoffTests.serverTests in server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.serviceTests in server.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sofia/IdeaProjects/chess/server/lib/passoff-dependencies.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sofia\IdeaProjects\chess" />
@@ -124,7 +124,36 @@
       <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\java\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.dataAccessTests">
+  <component name="RunManager" selected="JUnit.DataAccessTests">
+    <configuration name="DataAccessTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DataAccessTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataAccessTests.insertUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DataAccessTests" />
+      <option name="METHOD_NAME" value="insertUserTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataAccessTests.invalidfindUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DataAccessTests" />
+      <option name="METHOD_NAME" value="invalidfindUserTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StandardAPITests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
@@ -136,35 +165,6 @@
       <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
       <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dataAccessTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="dataAccessTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dataAccessTests.insertUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="dataAccessTests" />
-      <option name="METHOD_NAME" value="insertUserTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dataAccessTests.invalidfindUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="dataAccessTests" />
-      <option name="METHOD_NAME" value="invalidfindUserTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -185,9 +185,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.dataAccessTests" />
-        <item itemvalue="JUnit.dataAccessTests.invalidfindUserTest" />
-        <item itemvalue="JUnit.dataAccessTests.insertUserTest" />
+        <item itemvalue="JUnit.DataAccessTests" />
+        <item itemvalue="JUnit.DataAccessTests.invalidfindUserTest" />
+        <item itemvalue="JUnit.DataAccessTests.insertUserTest" />
         <item itemvalue="JUnit.passoffTests.serverTests in server" />
         <item itemvalue="JUnit.StandardAPITests" />
       </list>

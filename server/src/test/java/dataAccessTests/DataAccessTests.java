@@ -1,3 +1,5 @@
+package dataAccessTests;
+
 import dataAccess.AuthDAO;
 import dataAccess.DataAccessException;
 import dataAccess.GameDAO;
