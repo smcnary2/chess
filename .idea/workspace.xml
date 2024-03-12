@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="passes persistence test">
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/createDatabase.java" afterDir="false" />
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="cleaned up code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/UsersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/UsersDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/test/java/dataAccessTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/dataAccessTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +89,9 @@
     "JUnit.UserServiceTests.logoutUser.executor": "Run",
     "JUnit.UserServiceTests.registerUser.executor": "Run",
     "JUnit.UserServiceTests.resisterUserInvalidReq.executor": "Run",
+    "JUnit.dataAccessTests.executor": "Run",
+    "JUnit.dataAccessTests.insertUserTest.executor": "Run",
+    "JUnit.dataAccessTests.invalidfindUserTest.executor": "Run",
     "JUnit.passoffTests.serverTests in server.executor": "Run",
     "JUnit.serviceTests in server.executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -128,38 +128,7 @@
       <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\java\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.passoffTests.serverTests in server">
-    <configuration name="PersistenceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="passoffTests.serverTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.PersistenceTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersistenceTests.persistenceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="passoffTests.serverTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.PersistenceTests" />
-      <option name="METHOD_NAME" value="persistenceTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.dataAccessTests">
     <configuration name="StandardAPITests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
@@ -175,17 +144,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="dataAccessTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="serviceTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="serviceTests" />
-      <option name="MAIN_CLASS_NAME" value="serviceTests.UserServiceTests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="dataAccessTests" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dataAccessTests.insertUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="dataAccessTests" />
+      <option name="METHOD_NAME" value="insertUserTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dataAccessTests.invalidfindUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="dataAccessTests" />
+      <option name="METHOD_NAME" value="invalidfindUserTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -206,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.dataAccessTests" />
+        <item itemvalue="JUnit.dataAccessTests.invalidfindUserTest" />
+        <item itemvalue="JUnit.dataAccessTests.insertUserTest" />
         <item itemvalue="JUnit.passoffTests.serverTests in server" />
         <item itemvalue="JUnit.StandardAPITests" />
-        <item itemvalue="JUnit.UserServiceTests" />
-        <item itemvalue="JUnit.PersistenceTests.persistenceTest" />
-        <item itemvalue="JUnit.PersistenceTests" />
       </list>
     </recent_temporary>
   </component>
@@ -246,7 +229,7 @@
       <workItem from="1709062369860" duration="25558000" />
       <workItem from="1709233974562" duration="28174000" />
       <workItem from="1709675110819" duration="4893000" />
-      <workItem from="1709770980844" duration="35110000" />
+      <workItem from="1709770980844" duration="42301000" />
     </task>
     <task id="LOCAL-00001" summary="fixed repo">
       <option name="closed" value="true" />
@@ -616,7 +599,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710270423796</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="cleaned up code">
+      <option name="closed" value="true" />
+      <created>1710271273956</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1710271273956</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,7 +625,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cleaned up stalemate" />
     <MESSAGE value="renamed variables and removed dead code" />
     <MESSAGE value="update notes" />
     <MESSAGE value="added comments" />
@@ -659,7 +649,8 @@
     <MESSAGE value="fixed register error" />
     <MESSAGE value="passes tests from last phase" />
     <MESSAGE value="passes persistence test" />
-    <option name="LAST_COMMIT_MESSAGE" value="passes persistence test" />
+    <MESSAGE value="cleaned up code" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned up code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -830,7 +821,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java</url>
-          <line>44</line>
+          <line>47</line>
           <option name="timeStamp" value="343" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

@@ -28,6 +28,7 @@ public class createDatabase {
                 if (rs.next()) {
                     return rs.getInt(1);
                 }
+                rs.close();
 
                 return 0;
             }
