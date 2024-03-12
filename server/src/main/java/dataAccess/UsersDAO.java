@@ -21,14 +21,14 @@ public class UsersDAO extends createDatabase{
 
     }
     public void clearAllUsers() throws DataAccessException {
-        var statement = "TRUNCATE userschess";
+        var statement = "TRUNCATE usersChess";
         executeUpdate(statement);
 
     }
     public List<User> findAllUsers() throws DataAccessException {
         var result = new ArrayList<User>();
         try (var conn = DatabaseManager.getConnection()) {
-            var statement = "SELECT username, password, json FROM userschess";
+            var statement = "SELECT username, password, json FROM usersChess";
             try (var ps = conn.prepareStatement(statement)) {
                 try (var rs = ps.executeQuery()) {
                     while (rs.next()) {
@@ -45,7 +45,7 @@ public class UsersDAO extends createDatabase{
 
     public User findUser(User newUser) throws DataAccessException {
         try (var conn = DatabaseManager.getConnection()) {
-            var statement = "SELECT username, password, json FROM userschess WHERE username = ? AND password = ?";
+            var statement = "SELECT username, password, json FROM usersChess WHERE username = ? AND password = ?";
             try (var ps = conn.prepareStatement(statement)) {
                 ps.setString(1, newUser.username);
                 ps.setString(2,newUser.password);

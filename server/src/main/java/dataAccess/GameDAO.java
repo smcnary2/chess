@@ -24,7 +24,7 @@ public class GameDAO extends createDatabase{
     public List<WebGame> findAllGames() throws DataAccessException {
         var result = new ArrayList<WebGame>();
         try (var conn = DatabaseManager.getConnection()) {
-            var statement = "SELECT gameID, game_name, json FROM gamechess";
+            var statement = "SELECT gameID, game_name, json FROM gameChess";
             try (var ps = conn.prepareStatement(statement)) {
                 try (var rs = ps.executeQuery()) {
                     while (rs.next()) {

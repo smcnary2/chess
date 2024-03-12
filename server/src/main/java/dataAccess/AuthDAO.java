@@ -15,7 +15,7 @@ public class AuthDAO extends createDatabase{
     //find authorization
     public AuthData findAuth(String auth) throws DataAccessException {
         try (var conn = DatabaseManager.getConnection()) {
-            var statement = "SELECT authtoken, json FROM authchess WHERE authtoken = ?";
+            var statement = "SELECT authtoken, json FROM authChess WHERE authtoken = ?";
             try (var ps = conn.prepareStatement(statement)) {
                 ps.setString(1, auth);
                 try (var rs = ps.executeQuery()) {
