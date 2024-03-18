@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="fixed naming issue">
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="fixed error">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/EscapeSequences.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/UsersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/UsersDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +92,7 @@
     "JUnit.UserServiceTests.registerUser.executor": "Run",
     "JUnit.UserServiceTests.resisterUserInvalidReq.executor": "Run",
     "JUnit.dataAccessTests.* and 2 more.executor": "Run",
+    "JUnit.dataAccessTests.* and 6 more.executor": "Run",
     "JUnit.dataAccessTests.executor": "Run",
     "JUnit.dataAccessTests.insertUserTest.executor": "Run",
     "JUnit.dataAccessTests.invalidfindUserTest.executor": "Run",
@@ -112,7 +113,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "inlay.hints",
@@ -124,11 +125,11 @@
       <recent name="C:\Users\sofia\IdeaProjects\chess" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sofia\IdeaProjects\chess\client\src\test\java\clientTests" />
+      <recent name="C:\Users\sofia\IdeaProjects\chess\client\src\main\java\ui" />
       <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\test\java\passoffTests\serverTests" />
       <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\java\dataAccess" />
       <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\resources" />
-      <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\resources\web" />
-      <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\java\resources" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.dataAccessTests.* and 6 more">
@@ -232,15 +233,8 @@
       <workItem from="1709233974562" duration="28174000" />
       <workItem from="1709675110819" duration="4893000" />
       <workItem from="1709770980844" duration="42573000" />
-      <workItem from="1710279067788" duration="2545000" />
-    </task>
-    <task id="LOCAL-00002" summary="imported github files">
-      <option name="closed" value="true" />
-      <created>1705347481762</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1705347481762</updated>
+      <workItem from="1710279067788" duration="2951000" />
+      <workItem from="1710790725941" duration="242000" />
     </task>
     <task id="LOCAL-00003" summary="worked on ChessBoard">
       <option name="closed" value="true" />
@@ -626,7 +620,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710279523282</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="fixed error">
+      <option name="closed" value="true" />
+      <created>1710283650912</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1710283650912</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +646,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added comments" />
     <MESSAGE value="deleted code" />
     <MESSAGE value="finished commenting" />
     <MESSAGE value="update notes.md" />
@@ -669,7 +670,8 @@
     <MESSAGE value="cleaned up code" />
     <MESSAGE value="finished phase 4" />
     <MESSAGE value="fixed naming issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed naming issue" />
+    <MESSAGE value="fixed error" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
