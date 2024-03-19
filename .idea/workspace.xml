@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="fixed error">
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/EscapeSequences.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" afterDir="false" />
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="phase 5 setup">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/GamePlayUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
     </list>
@@ -56,70 +56,71 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Main.executor": "Run",
-    "Application.Server.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.DataAccessTests.executor": "Run",
-    "JUnit.PersistenceTests.executor": "Run",
-    "JUnit.PersistenceTests.persistenceTest.executor": "Run",
-    "JUnit.StandardAPITests.badAuthJoin.executor": "Run",
-    "JUnit.StandardAPITests.badColorJoin.executor": "Run",
-    "JUnit.StandardAPITests.clearData.executor": "Run",
-    "JUnit.StandardAPITests.executor": "Run",
-    "JUnit.StandardAPITests.failLogout.executor": "Run",
-    "JUnit.StandardAPITests.failRegister.executor": "Debug",
-    "JUnit.StandardAPITests.goodCreate.executor": "Run",
-    "JUnit.StandardAPITests.registerTwice.executor": "Run",
-    "JUnit.StandardAPITests.staticFiles.executor": "Run",
-    "JUnit.StandardAPITests.successLogin.executor": "Run",
-    "JUnit.StandardAPITests.successLogout.executor": "Run",
-    "JUnit.StandardAPITests.uniqueAuthorizationTokens.executor": "Run",
-    "JUnit.UserServiceTests.clearUserDAO.executor": "Run",
-    "JUnit.UserServiceTests.createGame.executor": "Run",
-    "JUnit.UserServiceTests.createGameInvalidReq.executor": "Run",
-    "JUnit.UserServiceTests.executor": "Run",
-    "JUnit.UserServiceTests.joinGame.executor": "Run",
-    "JUnit.UserServiceTests.joinGameInvalidReq.executor": "Run",
-    "JUnit.UserServiceTests.listgames.executor": "Run",
-    "JUnit.UserServiceTests.listgamesInvalidReq.executor": "Run",
-    "JUnit.UserServiceTests.loginInvalidReq.executor": "Run",
-    "JUnit.UserServiceTests.loginUser.executor": "Run",
-    "JUnit.UserServiceTests.loginWrongPw.executor": "Run",
-    "JUnit.UserServiceTests.logoutUser.executor": "Run",
-    "JUnit.UserServiceTests.registerUser.executor": "Run",
-    "JUnit.UserServiceTests.resisterUserInvalidReq.executor": "Run",
-    "JUnit.dataAccessTests.* and 2 more.executor": "Run",
-    "JUnit.dataAccessTests.* and 6 more.executor": "Run",
-    "JUnit.dataAccessTests.executor": "Run",
-    "JUnit.dataAccessTests.insertUserTest.executor": "Run",
-    "JUnit.dataAccessTests.invalidfindUserTest.executor": "Run",
-    "JUnit.passoffTests.serverTests in server.executor": "Run",
-    "JUnit.serviceTests in server.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "18",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/sofia/IdeaProjects/chess/server/lib/passoff-dependencies.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "inlay.hints",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.GamePlayUI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.DataAccessTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersistenceTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersistenceTests.persistenceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.badAuthJoin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.badColorJoin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.clearData.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.failLogout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.failRegister.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.StandardAPITests.goodCreate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.registerTwice.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.staticFiles.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.successLogin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.successLogout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.uniqueAuthorizationTokens.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.clearUserDAO.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.createGame.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.createGameInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.joinGame.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.joinGameInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.listgames.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.listgamesInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.loginInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.loginUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.loginWrongPw.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.logoutUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.registerUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.resisterUserInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.dataAccessTests.* and 2 more.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.dataAccessTests.* and 6 more.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.dataAccessTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.dataAccessTests.insertUserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.dataAccessTests.invalidfindUserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.passoffTests.serverTests in server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.serviceTests in server.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sofia/IdeaProjects/chess/server/lib/passoff-dependencies.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sofia\IdeaProjects\chess" />
@@ -132,22 +133,25 @@
       <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.dataAccessTests.* and 6 more">
+  <component name="RunManager" selected="Application.GamePlayUI">
+    <configuration name="GamePlayUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ui.GamePlayUI" />
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DataAccessTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <option name="PACKAGE_NAME" value="dataAccessTests" />
       <option name="MAIN_CLASS_NAME" value="dataAccessTests.DataAccessTests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataAccessTests.insertUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <option name="PACKAGE_NAME" value="dataAccessTests" />
-      <option name="MAIN_CLASS_NAME" value="dataAccessTests.DataAccessTests" />
-      <option name="METHOD_NAME" value="insertUserTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -192,11 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GamePlayUI" />
         <item itemvalue="JUnit.dataAccessTests.* and 6 more" />
         <item itemvalue="JUnit.DataAccessTests" />
         <item itemvalue="JUnit.dataAccessTests.* and 2 more" />
         <item itemvalue="JUnit.DataAccessTests.invalidfindUserTest" />
-        <item itemvalue="JUnit.DataAccessTests.insertUserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -234,15 +238,8 @@
       <workItem from="1709675110819" duration="4893000" />
       <workItem from="1709770980844" duration="42573000" />
       <workItem from="1710279067788" duration="2951000" />
-      <workItem from="1710790725941" duration="242000" />
-    </task>
-    <task id="LOCAL-00003" summary="worked on ChessBoard">
-      <option name="closed" value="true" />
-      <created>1705427251019</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1705427251019</updated>
+      <workItem from="1710790725941" duration="10075000" />
+      <workItem from="1710866280704" duration="3627000" />
     </task>
     <task id="LOCAL-00004" summary="worked on move, piece and position">
       <option name="closed" value="true" />
@@ -628,7 +625,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710283650912</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="phase 5 setup">
+      <option name="closed" value="true" />
+      <created>1710791264667</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1710791264667</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,7 +651,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="deleted code" />
     <MESSAGE value="finished commenting" />
     <MESSAGE value="update notes.md" />
     <MESSAGE value="project setup" />
@@ -671,7 +675,8 @@
     <MESSAGE value="finished phase 4" />
     <MESSAGE value="fixed naming issue" />
     <MESSAGE value="fixed error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed error" />
+    <MESSAGE value="phase 5 setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="phase 5 setup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -855,6 +860,26 @@
           <line>86</line>
           <option name="timeStamp" value="350" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/GamePlayUI.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="351" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/GamePlayUI.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="364" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/GamePlayUI.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="366" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/GamePlayUI.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="367" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -868,5 +893,9 @@
         <watch expression="token" language="JAVA" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
