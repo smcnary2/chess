@@ -36,6 +36,7 @@ public class UsersDAO extends createDatabase{
                     }
                 }
             }
+
         } catch (Exception e) {
             e.printStackTrace();
             throw new DataAccessException("Unable to read data");

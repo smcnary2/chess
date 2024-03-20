@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="started login ui">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GamePlayUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/GamePlayUI.java" afterDir="false" />
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="board ui is finished">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/Main2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/Main.java" afterDir="false" />
     </list>
@@ -22,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -64,6 +63,7 @@
     "Application.GamePlayUI.executor": "Run",
     "Application.LoginUI.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.Main2.executor": "Run",
     "Application.Server.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.DataAccessTests.executor": "Run",
@@ -135,14 +135,17 @@
       <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\java\dataAccess" />
       <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\resources" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main2">
     <configuration name="GamePlayUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.GamePlayUI" />
       <module name="client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ui.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -155,7 +158,7 @@
       <module name="client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ui.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -168,7 +171,7 @@
       <module name="client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ui.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -176,11 +179,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataAccessTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <option name="PACKAGE_NAME" value="dataAccessTests" />
-      <option name="MAIN_CLASS_NAME" value="dataAccessTests.DataAccessTests" />
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="Main2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main2" />
+      <module name="client" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -203,11 +204,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main2" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.LoginUI" />
         <item itemvalue="Application.GamePlayUI" />
         <item itemvalue="JUnit.dataAccessTests.* and 6 more" />
-        <item itemvalue="JUnit.DataAccessTests" />
       </list>
     </recent_temporary>
   </component>
@@ -246,15 +247,7 @@
       <workItem from="1709770980844" duration="42573000" />
       <workItem from="1710279067788" duration="2951000" />
       <workItem from="1710790725941" duration="10075000" />
-      <workItem from="1710866280704" duration="11811000" />
-    </task>
-    <task id="LOCAL-00006" summary="almost fixed project structure">
-      <option name="closed" value="true" />
-      <created>1705527966735</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1705527966735</updated>
+      <workItem from="1710866280704" duration="16400000" />
     </task>
     <task id="LOCAL-00007" summary="fixed project structure">
       <option name="closed" value="true" />
@@ -640,7 +633,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710872039946</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="board ui is finished">
+      <option name="closed" value="true" />
+      <created>1710968684786</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1710968684787</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -658,7 +659,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="project setup" />
     <MESSAGE value="all classes added" />
     <MESSAGE value="clear and register go through" />
     <MESSAGE value="logout works" />
@@ -683,7 +683,8 @@
     <MESSAGE value="phase 5 setup" />
     <MESSAGE value="board made" />
     <MESSAGE value="started login ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="started login ui" />
+    <MESSAGE value="board ui is finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="board ui is finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
