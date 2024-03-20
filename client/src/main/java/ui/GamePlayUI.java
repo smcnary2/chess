@@ -1,6 +1,9 @@
 package ui;
 
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static ui.EscapeSequences.*;
 public class GamePlayUI {
@@ -11,19 +14,33 @@ public class GamePlayUI {
 
 
     static void drawChessBoard(PrintStream out){
-        drawBoarders(out);
+        String[] boarder = {"h","g","f","e","d","c","b","a"};
+        List<String> pieces = new ArrayList<>(Arrays.asList(WHITE_ROOK, WHITE_KNIGHT, WHITE_BISHOP, WHITE_KING, WHITE_QUEEN, WHITE_BISHOP, WHITE_KNIGHT, WHITE_ROOK, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_ROOK, BLACK_KNIGHT, BLACK_BISHOP, BLACK_KING, BLACK_QUEEN, BLACK_BISHOP, BLACK_KNIGHT, BLACK_ROOK));
+        drawBoarders(out, boarder);
         out.println();
-        drawRow(out);
-        drawBoarders(out);
+        drawRow(out,1,pieces);
+        drawBoarders(out, boarder);
+        boarder = new String[]{"a", "b", "c", "d", "e", "f", "g", "h" };
+        pieces = new ArrayList<>(Arrays.asList(BLACK_ROOK, BLACK_KNIGHT, BLACK_BISHOP, BLACK_QUEEN, BLACK_KING, BLACK_BISHOP, BLACK_KNIGHT, BLACK_ROOK,  BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, BLACK_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN, WHITE_PAWN,WHITE_ROOK, WHITE_KNIGHT, WHITE_BISHOP, WHITE_QUEEN, WHITE_KING, WHITE_BISHOP, WHITE_KNIGHT, WHITE_ROOK));
+
+        out.println();
+        out.println();
+        out.println();
+        out.println();
+        drawBoarders(out,boarder);
+        out.println();
+        drawRow(out,-8,pieces);
+        drawBoarders(out,boarder);
+
 
     }
-    private static void drawBoarders(PrintStream out){
+    private static void drawBoarders(PrintStream out,String[] boarder){
         setDarkGrey(out);
-        String[] boarder = {"h","g","f","e","d","c","b","a"};
+
         out.print(" ");
         for(int boardCol  = 0; boardCol<BOARD_SIZE_IN_SQUARES*2; ++boardCol){
             drawBoarder(out, boarder[boardCol]);
-            out.print("      ");
+            out.print("       ");
         }
     }
     private static void drawBoarder(PrintStream out, String s){
@@ -37,12 +54,14 @@ public class GamePlayUI {
         setDarkGrey(out);
     }
 
-    private static void drawRow(PrintStream out){
+    private static void drawRow(PrintStream out,int row, List<String> piecesNotPawns){
+
         int numloops = 0;
         for (int squareRow = 0; squareRow < BOARD_SIZE_IN_SQUARES*2; squareRow = (numloops%2==0) ? squareRow+1:squareRow) {
             setWhite(out);
             if(numloops%2 ==0){
-                out.print(squareRow+1);
+                out.print(Math.abs(row));//numbers on left side of board
+
             }else{
                 out.print(' ');
             }
@@ -51,26 +70,56 @@ public class GamePlayUI {
                 setGrey(out);
 
                 if (squareRow%2 ==0) {
-                    setBlack(out);
-                    out.print(EMPTY.repeat(LINE_WIDTH_IN_CHARS));
+                    setDarkGrey(out);
+                    if(numloops ==1|| numloops ==3|| numloops ==12 ||numloops ==15){
+                        out.print(EMPTY);
+                        out.print(piecesNotPawns.getFirst());
+                        piecesNotPawns.removeFirst();
+                    }else{
+
+                        out.print(EMPTY.repeat(LINE_WIDTH_IN_CHARS));
+                    }
+
                 }
                 else {
-                    out.print(EMPTY.repeat(SQUARE_SIZE_IN_CHARS));
+                    setGrey(out);
+                    if(numloops ==1|| numloops ==3 ||numloops ==12 ||numloops ==15){
+                        out.print(EMPTY);
+                        out.print(piecesNotPawns.getFirst());
+                        piecesNotPawns.removeFirst();
+                    }else {
+                        out.print(EMPTY.repeat(SQUARE_SIZE_IN_CHARS));
+                    }
                 }
                     // Draw right line
                 if(squareRow%2 !=0){
-                    setBlack(out);
-                    out.print(EMPTY.repeat(LINE_WIDTH_IN_CHARS));
+                    setDarkGrey(out);
+                    if( numloops ==1|| numloops ==3||  numloops ==12 ||numloops ==15){
+                        out.print(EMPTY);
+                        out.print(piecesNotPawns.getFirst());
+                        piecesNotPawns.removeFirst();
+                    }else{
+
+                        out.print(EMPTY.repeat(LINE_WIDTH_IN_CHARS));
+                    }
                 }else{
                     setGrey(out);
-                    out.print(EMPTY.repeat(LINE_WIDTH_IN_CHARS));
+                    if(numloops ==1|| numloops ==3|| numloops ==12 ||numloops ==15){
+                        out.print(EMPTY);
+                        out.print(piecesNotPawns.getFirst());
+                        piecesNotPawns.removeFirst();
+                    }else {
+
+                        out.print(EMPTY.repeat(SQUARE_SIZE_IN_CHARS));
+                    }
                 }
 
-                setDarkGrey(out);
+                setBlack(out);
             }
             setWhite(out);
             if(numloops%2 ==0){
-                out.print(squareRow+1);
+                out.print(Math.abs(row));//numbers on right side of board
+                row= row+1;
             }
 
             out.println();
