@@ -3,6 +3,8 @@ package ui;
 import com.google.gson.Gson;
 import model.AuthData;
 import model.User;
+import model.WebGame;
+import server.Server;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,8 +16,11 @@ import java.net.URL;
 
 public class ServerFacade {
     private final String serverUrl;
-
+    public Server server;
     public ServerFacade(String url){
+
+        server = new Server();
+        server.run(8080);
         serverUrl = url;
     }
 
@@ -23,13 +28,28 @@ public class ServerFacade {
        var path = "/user";
        return this.makeRequest("POST", path, user, AuthData.class);
     }
+    public Object logout(AuthData authdata){
+        var path = String.format("/session/%s", authdata.getAuthToken());
+        return this.makeRequest("DELETE", path, authdata, null);
+    }
+
+    public AuthData login(User user){
+        var path = "/session";
+        return this.makeRequest("POST", path, user, AuthData.class);
+    }
+    public WebGame creategame(String auth, WebGame newgame){
+        var path = String.format("/game/%s", auth);
+        return this.makeRequest("POST",path, newgame, WebGame.class);
+    }
+    public WebGame [] listgames(String auth){
+        var path = "/game/%s"
+    }
 
     private <T> T makeRequest(String method, String path, Object request, Class<T> responseClass){
         try{
             URL url = (new URI(serverUrl + path)).toURL();
             HttpURLConnection http = (HttpURLConnection) url.openConnection();
             http.setRequestMethod(method);
-            http.setDoOutput(true);
 
             writeBody(request, http);
             http.connect();
@@ -43,6 +63,7 @@ public class ServerFacade {
     }
     private static void writeBody(Object request, HttpURLConnection http) throws IOException {
         if (request != null) {
+            http.setDoOutput(true);
             http.addRequestProperty("Content-Type", "application/json");
             String reqData = new Gson().toJson(request);
             try (OutputStream reqBody = http.getOutputStream()) {
@@ -50,6 +71,7 @@ public class ServerFacade {
             }
         }
     }
+
     private static <T> T readBody(HttpURLConnection http, Class<T> responseClass) throws IOException {
         T response = null;
         if (http.getContentLength() < 0) {

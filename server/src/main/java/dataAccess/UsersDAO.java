@@ -17,7 +17,7 @@ public class UsersDAO extends createDatabase{
         var statement = "INSERT INTO usersChess (username, password, email, json) VALUES(?,?,?,?)";
         var json = new Gson().toJson(newUser);
         Object id = executeUpdate(statement,newUser.username, newUser.password, newUser.email, json);
-        System.out.print(id);
+        //System.out.print(id);
 
     }
     public void clearAllUsers() throws DataAccessException {
@@ -65,7 +65,7 @@ public class UsersDAO extends createDatabase{
     private User readUser(ResultSet rs) throws SQLException {
         var json = rs.getString("json");
         var  user= new Gson().fromJson(json, User.class);
-        System.out.print(user);
+        //System.out.print(user);
         return user;
     }
 

@@ -36,13 +36,13 @@ public class Server {
 
         Spark.post("/session", ((request, response) -> new Handlers().loginHandler(request, response, finalUserService)));
         //logout:delete
-        Spark.delete("/session", ((request, response) -> new Handlers().logoutHandler(request, response, finalUserService)));//works now
+        Spark.delete("/session/:auth", ((request, response) -> new Handlers().logoutHandler(request, response, finalUserService)));//works now
 
         //list games: get
-        Spark.get("/game", (request, response) -> new Handlers().listGameHandler(request, response,finalUserService, finalGameService));
+        Spark.get("/game/:auth", (request, response) -> new Handlers().listGameHandler(request, response,finalUserService, finalGameService));
 
         //new game
-        Spark.post("/game", ((request, response) -> new Handlers().newGameHandler(request, response, finalUserService, finalGameService)));//works
+        Spark.post("/game/:auth", ((request, response) -> new Handlers().newGameHandler(request, response, finalUserService, finalGameService)));//works
         //join game
         Spark.put("/game", (request, response) -> new Handlers().joinGameHandler(request,response,finalUserService,finalGameService));//working on it
 

@@ -74,7 +74,7 @@ public class Handlers {
     }
     public Object logoutHandler(Request request, Response response,UserService userService) throws DataAccessException{
         var userReq = new UserRequests();
-        var at = request.headers("authorization");
+        var at = (request.params(":auth"));
         userReq.setAuthtoken(at);
         userService.logout(userReq);
         if(userReq.error != 200){
@@ -87,7 +87,7 @@ public class Handlers {
 
     public Object listGameHandler(Request request, Response response,UserService userService, GameService gameService) throws DataAccessException{
         var userReq = new UserRequests();
-        var at = request.headers("authorization");
+        var at = (request.params(":auth"));
         userReq.setAuthtoken(at);
 
         if(userService.verifyAuth(at) == null) {
@@ -108,7 +108,7 @@ public class Handlers {
 
     public Object newGameHandler(Request request, Response response,UserService userService, GameService gameService) throws DataAccessException{
         var userReq = gson.fromJson(request.body(), UserRequests.class);
-        var at = request.headers("authorization");
+        var at = (request.params(":auth"));
         userReq.setAuthtoken(at);
 
         if(userService.verifyAuth(at) == null) {

@@ -16,6 +16,9 @@ public class WebGame {
         //players join game dont assign colors until DAO
 
     }
+    public WebGame(String gn){
+        gameName = gn;
+    }
 
     public String getWhiteUsername() {
         return whiteUsername;
