@@ -3,6 +3,7 @@ package ui;
 import com.google.gson.Gson;
 import model.AuthData;
 import model.User;
+import model.UserRequests;
 import model.WebGame;
 import server.Server;
 
@@ -48,6 +49,10 @@ public class ServerFacade {
         var response = this.makeRequest("GET", path, null, listgameResponse.class );
 
         return response.game();
+    }
+    public void joinGame(String auth, UserRequests game){
+        var path = String.format("/game/%s",auth);
+        this.makeRequest("PUT", path, game, null);
     }
 
     private <T> T makeRequest(String method, String path, Object request, Class<T> responseClass){

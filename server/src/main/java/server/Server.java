@@ -44,7 +44,7 @@ public class Server {
         //new game
         Spark.post("/game/:auth", ((request, response) -> new Handlers().newGameHandler(request, response, finalUserService, finalGameService)));//works
         //join game
-        Spark.put("/game", (request, response) -> new Handlers().joinGameHandler(request,response,finalUserService,finalGameService));//working on it
+        Spark.put("/game/:auth", (request, response) -> new Handlers().joinGameHandler(request,response,finalUserService,finalGameService));//working on it
 
 
         Spark.awaitInitialization();

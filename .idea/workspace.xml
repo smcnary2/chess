@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="creategame done">
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="listgames done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/handlers/Handlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/handlers/Handlers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +64,7 @@
     "Application.GamePlayUI.executor": "Run",
     "Application.LoginUI.executor": "Run",
     "Application.Main.executor": "Run",
-    "Application.Main2.executor": "Run",
+    "Application.Main2.executor": "Debug",
     "Application.Server.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.DataAccessTests.executor": "Run",
@@ -247,15 +248,7 @@
       <workItem from="1709770980844" duration="42573000" />
       <workItem from="1710279067788" duration="2951000" />
       <workItem from="1710790725941" duration="10075000" />
-      <workItem from="1710866280704" duration="31602000" />
-    </task>
-    <task id="LOCAL-00009" summary="pass add&amp;get piece">
-      <option name="closed" value="true" />
-      <created>1705602820050</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1705602820050</updated>
+      <workItem from="1710866280704" duration="33799000" />
     </task>
     <task id="LOCAL-00010" summary="added classes;pass move, position">
       <option name="closed" value="true" />
@@ -641,7 +634,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711396548349</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="listgames done">
+      <option name="closed" value="true" />
+      <created>1711400157287</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1711400157288</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -659,7 +660,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="logout works" />
     <MESSAGE value="login works" />
     <MESSAGE value="static files passes" />
     <MESSAGE value="all tests pass" />
@@ -684,7 +684,8 @@
     <MESSAGE value="board ui is finished" />
     <MESSAGE value="ServerFacade register" />
     <MESSAGE value="creategame done" />
-    <option name="LAST_COMMIT_MESSAGE" value="creategame done" />
+    <MESSAGE value="listgames done" />
+    <option name="LAST_COMMIT_MESSAGE" value="listgames done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -824,11 +825,6 @@
           <option name="timeStamp" value="322" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/handlers/Handlers.java</url>
-          <line>148</line>
-          <option name="timeStamp" value="324" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java</url>
           <line>44</line>
           <option name="timeStamp" value="326" />
@@ -840,7 +836,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java</url>
-          <line>45</line>
+          <line>44</line>
           <option name="timeStamp" value="343" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -870,61 +866,38 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java</url>
-          <line>95</line>
-          <option name="timeStamp" value="382" />
+          <line>104</line>
+          <option name="timeStamp" value="397" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="384" />
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="399" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="386" />
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="400" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/shared/src/main/java/model/Responses.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="387" />
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="401" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="388" />
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="402" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="389" />
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="403" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="390" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="391" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="393" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="394" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/Server.java</url>
-          <line>41</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="395" />
+          <url>file://$PROJECT_DIR$/server/src/main/java/handlers/Handlers.java</url>
+          <line>136</line>
+          <option name="timeStamp" value="406" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/client/src/main/java/ui/GamePlayUI.java</url>

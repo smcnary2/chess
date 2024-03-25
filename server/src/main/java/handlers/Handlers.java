@@ -134,7 +134,7 @@ public class Handlers {
     }
     public Object joinGameHandler(Request request, Response response,UserService userService, GameService gameService) throws DataAccessException{
         var userReq = gson.fromJson(request.body(), UserRequests.class);
-        var at = request.headers("authorization");
+        var at = (request.params(":auth"));
         userReq.setAuthtoken(at);
         var authdata = userService.verifyAuth(at);
         if( authdata == null) {

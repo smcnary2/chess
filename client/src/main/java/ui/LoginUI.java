@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import dataAccess.DataAccessException;
 import model.AuthData;
 import model.User;
+import model.UserRequests;
 import model.WebGame;
 
 import java.util.Arrays;
@@ -102,13 +103,47 @@ public class LoginUI {
     //join games
     public static String joinGame(String... params) throws DataAccessException {
         assertSignedIn();
+        if(params.length == 2){
+            try{
+                var id = Integer.parseInt(params[0]);
+                var color = params[1].toUpperCase();
+                UserRequests gamereq  = new UserRequests(color, id);
+                server.joinGame(authdata.getAuthToken(), gamereq);
+                var game = getGame(id);
+                if(game != null){
+                    if(game.getBlackUsername().equals(authdata.getUsername())){
+                        color = "BLACK";
+                    }else if (game.getWhiteUsername().equals(authdata.getUsername())){
+                        color = "WHITE";
+                    }else{
+                        return "the game is full";
+                    }
+                    return String.format("you joined %s as %s",id, color );
+                }else{
+                    //add as observer
+                   return String.format("%s is full. You've been added as an observer", id);
+                }
+
+            }catch(Exception e){
+
+            }
+        }
         return "invalid request";
     }
+
 
     //join observer
     public static String observerGame(String... params) throws DataAccessException {
         assertSignedIn();
         return "invalid request";
+    }
+    public static WebGame getGame(int id){
+        for(var game : server.listgames(authdata.getAuthToken())){
+            if(game.getGameID() == id){
+                return game;
+            }
+        }
+        return null;
     }
 
     public static String help() {
