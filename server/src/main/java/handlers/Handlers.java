@@ -103,7 +103,7 @@ public class Handlers {
         if(listOfGames == null){
             return gson.toJson( new ErrorMessage("error"));
         }
-        return gson.toJson(Map.of("games",userResponse.listGameResponse(listOfGames)));
+        return gson.toJson(Map.of("game",userResponse.listGameResponse(listOfGames).toArray()));
     }
 
     public Object newGameHandler(Request request, Response response,UserService userService, GameService gameService) throws DataAccessException{

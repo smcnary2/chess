@@ -90,7 +90,7 @@ public class LoginUI {
     //list games
     public static String listGames() throws DataAccessException {
         assertSignedIn();
-        var games = server.listgames();
+        var games = server.listgames(authdata.getAuthToken());
         var result = new StringBuilder();
         var gson = new Gson();
         for(var game:games){

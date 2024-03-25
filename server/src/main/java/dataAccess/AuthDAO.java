@@ -35,7 +35,6 @@ public class AuthDAO extends createDatabase{
     private AuthData readAuth(ResultSet rs) throws SQLException {
         var json = rs.getString("json");
         var AuthData = new Gson().fromJson(json, AuthData.class);
-        System.out.print(AuthData);
         return AuthData;
     }
 
