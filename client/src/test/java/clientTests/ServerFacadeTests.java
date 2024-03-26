@@ -51,6 +51,25 @@ public class ServerFacadeTests {
         var result2 = serverFacade.login(newUser2);
         Assertions.assertEquals(new UserService().pushToAuthDAO.findAuth(result2.getAuthToken()).getUsername(), result2.getUsername());
     }
+
+    @Test
+    public void extensiveRegisterTest() throws DataAccessException {
+        User newuser1 = new User("james","password","email");
+        User newuser2 = new User("olivia","pw", "e");
+        User newuser3 = new User("cherol", "pw2", "e2");
+
+        var resultJames = serverFacade.register(newuser1);
+        var resultOlivia = serverFacade.register(newuser2);
+        var resultCherol = serverFacade.register(newuser3);
+
+        Assertions.assertNotNull(resultOlivia);
+        Assertions.assertEquals("james",resultJames.getUsername());
+
+        serverFacade.logout(resultCherol);
+
+        Assertions.assertNull(new UserService().pushToAuthDAO.findAuth(resultCherol.getAuthToken()));
+    }
+
     @Test
     public void GameServiceTests() throws DataAccessException {
         User newuser = new User("james","password","email");
@@ -71,10 +90,63 @@ public class ServerFacadeTests {
         Assertions.assertEquals(new GameService().pushRequest.findGame(resultgame1.getGameID()).getBlackUsername(),"james");
         //observeGame
         UserRequests gamereq2 = new UserRequests(resultgame1.getGameID()) ;
-        serverFacade.joinGame(authdata.getAuthToken(), gamereq);
+        serverFacade.joinGame(authdata.getAuthToken(), gamereq2);
 
     }
 
+    @Test
+    public void extensiveJoinTest() throws DataAccessException {
+        User newuser = new User("james","password","email");
+        var authdata = serverFacade.register(newuser);
+
+        User newuser2 = new User("olivia","pw","e");
+        var authdata2 = serverFacade.register(newuser2);
+
+        WebGame newgame1 = new WebGame("newgame");
+        WebGame newgame2 = new WebGame("newgame2");
+        WebGame newgame3 = new WebGame("game3");
+        var resultgame1 = serverFacade.creategame(authdata.getAuthToken(), newgame1);
+        var resultgame2 = serverFacade.creategame(authdata.getAuthToken(), newgame2);
+        serverFacade.creategame(authdata.getAuthToken(),newgame3);
+
+        UserRequests gamereq = new UserRequests("BLACK",resultgame1.getGameID()) ;
+        serverFacade.joinGame(authdata.getAuthToken(), gamereq);
+        Assertions.assertEquals(new GameService().pushRequest.findGame(resultgame1.getGameID()).getBlackUsername(),"james");
+
+        serverFacade.joinGame(authdata2.getAuthToken(), gamereq);
+        Assertions.assertEquals(new GameService().pushRequest.findGame(resultgame1.getGameID()).getBlackUsername(),"james");
+
+        UserRequests gamereq2 = new UserRequests("WHITE", resultgame1.getGameID());
+        serverFacade.joinGame(authdata2.getAuthToken(),gamereq2);
+        Assertions.assertEquals(new GameService().pushRequest.findGame(resultgame1.getGameID()).getWhiteUsername(),"olivia");
+        Assertions.assertEquals(new GameService().pushRequest.findGame(resultgame1.getGameID()).getBlackUsername(),"james");
+
+        UserRequests invalidGameReq = new UserRequests("back", resultgame2.getGameID());
+        serverFacade.joinGame(authdata2.getAuthToken(), invalidGameReq);
+        Assertions.assertNull(new GameService().pushRequest.findGame(resultgame2.getGameID()).getWhiteUsername());
+        Assertions.assertNull(new GameService().pushRequest.findGame(resultgame2.getGameID()).getBlackUsername());
+    }
+
+    @Test
+    public void extensiveListGamesTest(){
+        User newuser = new User("olivia","pw","e");
+        var authdata = serverFacade.register(newuser);
+
+        WebGame newgame1 = new WebGame("newgame");
+        WebGame newgame2 = new WebGame("newgame2");
+        WebGame newgame3 = new WebGame("game3");
+        var resultgame1 = serverFacade.creategame(authdata.getAuthToken(), newgame1);
+        var resultgame2 = serverFacade.creategame(authdata.getAuthToken(), newgame2);
+        var resultgame3 = serverFacade.creategame(authdata.getAuthToken(),newgame3);
+
+        WebGame[] resultList = serverFacade.listgames(authdata.getAuthToken());
+        Assertions.assertEquals(3,resultList.length);
+
+        Assertions.assertEquals(resultList[0].getGameID(), resultgame1.getGameID());
+        Assertions.assertEquals(resultList[1].getGameID(), resultgame2.getGameID());
+        Assertions.assertEquals(resultList[2].getGameID(), resultgame3.getGameID());
+
+    }
 
 
 
