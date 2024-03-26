@@ -20,6 +20,10 @@ public class WebGame {
         gameName = gn;
     }
 
+    public WebGame(int id) {
+        gameID = id;
+    }
+
     public String getWhiteUsername() {
         return whiteUsername;
     }

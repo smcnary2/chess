@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="listgames done">
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="join done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/handlers/Handlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/handlers/Handlers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/model/UserRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/model/UserRequests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/model/WebGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/model/WebGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,12 +66,13 @@
     "Application.GamePlayUI.executor": "Run",
     "Application.LoginUI.executor": "Run",
     "Application.Main.executor": "Run",
-    "Application.Main2.executor": "Debug",
+    "Application.Main2.executor": "Run",
     "Application.Server.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.DataAccessTests.executor": "Run",
     "JUnit.PersistenceTests.executor": "Run",
     "JUnit.PersistenceTests.persistenceTest.executor": "Run",
+    "JUnit.ServerFacadeTests.executor": "Run",
     "JUnit.StandardAPITests.badAuthJoin.executor": "Run",
     "JUnit.StandardAPITests.badColorJoin.executor": "Run",
     "JUnit.StandardAPITests.clearData.executor": "Run",
@@ -140,7 +143,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main2">
+  <component name="RunManager" selected="JUnit.ServerFacadeTests">
     <configuration name="GamePlayUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.GamePlayUI" />
       <module name="client" />
@@ -187,29 +190,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="dataAccessTests.* and 6 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <option name="TEST_OBJECT" value="pattern" />
-      <patterns>
-        <pattern testClass="dataAccessTests.*" />
-        <pattern testClass="dataAccessTests.DataAccessTests" />
-        <pattern testClass="passoffTests.serverTests.*" />
-        <pattern testClass="passoffTests.serverTests.PersistenceTests" />
-        <pattern testClass="passoffTests.serverTests.StandardAPITests" />
-        <pattern testClass="serviceTests.*" />
-        <pattern testClass="serviceTests.UserServiceTests" />
-      </patterns>
+    <configuration name="ServerFacadeTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clientTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="clientTests" />
+      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ServerFacadeTests" />
         <item itemvalue="Application.Main2" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.LoginUI" />
         <item itemvalue="Application.GamePlayUI" />
-        <item itemvalue="JUnit.dataAccessTests.* and 6 more" />
       </list>
     </recent_temporary>
   </component>
@@ -248,15 +250,7 @@
       <workItem from="1709770980844" duration="42573000" />
       <workItem from="1710279067788" duration="2951000" />
       <workItem from="1710790725941" duration="10075000" />
-      <workItem from="1710866280704" duration="33799000" />
-    </task>
-    <task id="LOCAL-00010" summary="added classes;pass move, position">
-      <option name="closed" value="true" />
-      <created>1705608472931</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1705608472931</updated>
+      <workItem from="1710866280704" duration="39079000" />
     </task>
     <task id="LOCAL-00011" summary="pass bishop">
       <option name="closed" value="true" />
@@ -642,7 +636,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711400157288</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="join done">
+      <option name="closed" value="true" />
+      <created>1711402988105</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1711402988105</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -660,7 +662,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="login works" />
     <MESSAGE value="static files passes" />
     <MESSAGE value="all tests pass" />
     <MESSAGE value="fixed some tests" />
@@ -685,7 +686,8 @@
     <MESSAGE value="ServerFacade register" />
     <MESSAGE value="creategame done" />
     <MESSAGE value="listgames done" />
-    <option name="LAST_COMMIT_MESSAGE" value="listgames done" />
+    <MESSAGE value="join done" />
+    <option name="LAST_COMMIT_MESSAGE" value="join done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -835,11 +837,6 @@
           <option name="timeStamp" value="327" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="343" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/PersistenceTests.java</url>
           <line>86</line>
           <option name="timeStamp" value="350" />
@@ -855,49 +852,49 @@
           <option name="timeStamp" value="367" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/handlers/Handlers.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="380" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/handlers/Handlers.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="381" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java</url>
-          <line>104</line>
+          <line>105</line>
           <option name="timeStamp" value="397" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java</url>
-          <line>106</line>
+          <line>107</line>
           <option name="timeStamp" value="399" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java</url>
-          <line>109</line>
+          <line>110</line>
           <option name="timeStamp" value="400" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java</url>
-          <line>111</line>
+          <line>112</line>
           <option name="timeStamp" value="401" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java</url>
-          <line>110</line>
+          <line>111</line>
           <option name="timeStamp" value="402" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java</url>
-          <line>112</line>
+          <line>113</line>
           <option name="timeStamp" value="403" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/handlers/Handlers.java</url>
           <line>136</line>
           <option name="timeStamp" value="406" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/handlers/Handlers.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="407" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="410" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/client/src/main/java/ui/GamePlayUI.java</url>

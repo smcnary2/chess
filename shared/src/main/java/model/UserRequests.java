@@ -36,6 +36,9 @@ public class UserRequests {
         this.gameID = gameID;
         error = 200;
     }
+    public UserRequests(int gameID){
+        this.gameID = gameID;
+    }
 
     public String getPlayerColor() {
         return playerColor;

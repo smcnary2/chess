@@ -7,9 +7,10 @@ import service.UserService;
 import spark.Spark;
 
 public class Server {
-
+    public int port;
     public int run(int desiredPort)  {
         Spark.port(desiredPort);
+        port = desiredPort;
 
         Spark.staticFiles.location("web");
 

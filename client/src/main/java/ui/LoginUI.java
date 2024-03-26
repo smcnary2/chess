@@ -121,6 +121,7 @@ public class LoginUI {
                     return String.format("you joined %s as %s",id, color );
                 }else{
                     //add as observer
+                    observerGame(params);
                    return String.format("%s is full. You've been added as an observer", id);
                 }
 
@@ -135,6 +136,12 @@ public class LoginUI {
     //join observer
     public static String observerGame(String... params) throws DataAccessException {
         assertSignedIn();
+        int id;
+        if(params.length ==1 ||params.length == 2){
+            id = Integer.parseInt(params[0]);
+            UserRequests game = new UserRequests(id);
+            server.joinGame(authdata.getAuthToken(), game);
+        }
         return "invalid request";
     }
     public static WebGame getGame(int id){

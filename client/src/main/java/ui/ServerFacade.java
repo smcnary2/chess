@@ -20,8 +20,8 @@ public class ServerFacade {
     public Server server;
     public ServerFacade(String url){
 
-        server = new Server();
-        server.run(8080);
+//        server = new Server();
+//        server.run(8080);
         serverUrl = url;
     }
 
