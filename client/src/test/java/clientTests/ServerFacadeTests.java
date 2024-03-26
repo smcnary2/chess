@@ -1,6 +1,7 @@
 package clientTests;
 
 import dataAccess.DataAccessException;
+import model.AuthData;
 import model.User;
 import model.UserRequests;
 import model.WebGame;
@@ -37,9 +38,25 @@ public class ServerFacadeTests {
         gameService.clear();
     }
     @Test
-    public void UserServiceTests() throws DataAccessException {
+    public void register() throws DataAccessException {
 
         //register
+        User newuser = new User("james","password","email");
+        var result = serverFacade.register(newuser);
+        Assertions.assertEquals("james",result.getUsername());
+    }
+
+    @Test
+    public void logout() throws DataAccessException {
+        User newuser = new User("james","password","email");
+        var result = serverFacade.register(newuser);
+        Assertions.assertEquals("james",result.getUsername());
+        //logout
+        serverFacade.logout(result);
+        Assertions.assertNull(new UserService().pushToAuthDAO.findAuth(result.getAuthToken()));
+    }
+    @Test
+    public void login() throws DataAccessException {
         User newuser = new User("james","password","email");
         var result = serverFacade.register(newuser);
         Assertions.assertEquals("james",result.getUsername());
@@ -71,7 +88,43 @@ public class ServerFacadeTests {
     }
 
     @Test
-    public void GameServiceTests() throws DataAccessException {
+    public void loginpt2() throws DataAccessException {
+        User newuser = new User("james","password","email");
+        var result = serverFacade.register(newuser);
+        Assertions.assertEquals("james",result.getUsername());
+        //logout
+        serverFacade.logout(result);
+        Assertions.assertNull(new UserService().pushToAuthDAO.findAuth(result.getAuthToken()));
+        //login
+        User newUser2 = new User("james", null);
+        var result2 = serverFacade.login(newUser2);
+        Assertions.assertNull(result2);
+    }
+    @Test
+    public void logoutpt2() throws DataAccessException {
+        User newuser = new User("james","password","email");
+        var result = serverFacade.register(newuser);
+        Assertions.assertEquals("james",result.getUsername());
+        //logout
+        serverFacade.logout(new AuthData("dkjfoie", "james"));
+        Assertions.assertNotNull(new UserService().pushToAuthDAO.findAuth(result.getAuthToken()));
+    }
+
+    @Test
+    public void createGame() throws DataAccessException {
+        User newuser = new User("james","password","email");
+        var authdata = serverFacade.register(newuser);
+        //createGame
+        WebGame newgame1 = new WebGame("newgame");
+        WebGame newgame2 = new WebGame("newgame2");
+        var resultgame1 = serverFacade.creategame(authdata.getAuthToken(), newgame1);
+        var resultgame2 = serverFacade.creategame(authdata.getAuthToken(), newgame2);
+        Assertions.assertNotNull(new GameService().pushRequest.findGame(resultgame1.getGameID()));
+        Assertions.assertNotNull(new GameService().pushRequest.findGame(resultgame2.getGameID()));
+
+    }
+    @Test
+    public void listgames() throws DataAccessException {
         User newuser = new User("james","password","email");
         var authdata = serverFacade.register(newuser);
         //createGame
@@ -84,6 +137,17 @@ public class ServerFacadeTests {
         //listgames
         var resultList = serverFacade.listgames(authdata.getAuthToken());
         Assertions.assertEquals(2,resultList.length);
+
+    }
+    @Test
+    public void joinGame() throws DataAccessException {
+        User newuser = new User("james","password","email");
+        var authdata = serverFacade.register(newuser);
+        //createGame
+        WebGame newgame1 = new WebGame("newgame");
+        WebGame newgame2 = new WebGame("newgame2");
+        var resultgame1 = serverFacade.creategame(authdata.getAuthToken(), newgame1);
+        var resultgame2 = serverFacade.creategame(authdata.getAuthToken(), newgame2);
         //joinGame
         UserRequests gamereq = new UserRequests("BLACK",resultgame1.getGameID()) ;
         serverFacade.joinGame(authdata.getAuthToken(), gamereq);
@@ -91,6 +155,17 @@ public class ServerFacadeTests {
         //observeGame
         UserRequests gamereq2 = new UserRequests(resultgame1.getGameID()) ;
         serverFacade.joinGame(authdata.getAuthToken(), gamereq2);
+    }
+    @Test
+    public void creategamept2() throws DataAccessException {
+        User newuser = new User("james","password","email");
+        var authdata = serverFacade.register(newuser);
+        //createGame
+        WebGame newgame1 = new WebGame(null);
+
+        var resultgame1 = serverFacade.creategame(authdata.getAuthToken(), newgame1);
+
+        Assertions.assertNull(resultgame1);
 
     }
 

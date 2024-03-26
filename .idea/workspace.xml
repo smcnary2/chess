@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="join done">
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="finished phase 5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" afterDir="false" />
     </list>
@@ -68,6 +68,7 @@
     "JUnit.PersistenceTests.executor": "Run",
     "JUnit.PersistenceTests.persistenceTest.executor": "Run",
     "JUnit.ServerFacadeTests.executor": "Run",
+    "JUnit.ServerFacadeTests.extensiveRegisterTest.executor": "Run",
     "JUnit.StandardAPITests.badAuthJoin.executor": "Run",
     "JUnit.StandardAPITests.badColorJoin.executor": "Run",
     "JUnit.StandardAPITests.clearData.executor": "Run",
@@ -138,7 +139,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ServerFacadeTests.extensiveRegisterTest">
+  <component name="RunManager" selected="JUnit.ServerFacadeTests">
     <configuration name="LoginUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.LoginUI" />
       <module name="client" />
@@ -205,8 +206,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ServerFacadeTests.extensiveRegisterTest" />
         <item itemvalue="JUnit.ServerFacadeTests" />
+        <item itemvalue="JUnit.ServerFacadeTests.extensiveRegisterTest" />
         <item itemvalue="Application.Main2" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.LoginUI" />
@@ -248,15 +249,7 @@
       <workItem from="1709770980844" duration="42573000" />
       <workItem from="1710279067788" duration="2951000" />
       <workItem from="1710790725941" duration="10075000" />
-      <workItem from="1710866280704" duration="40783000" />
-    </task>
-    <task id="LOCAL-00012" summary="pass pawn">
-      <option name="closed" value="true" />
-      <created>1705703220987</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1705703220987</updated>
+      <workItem from="1710866280704" duration="41729000" />
     </task>
     <task id="LOCAL-00013" summary="pass rook">
       <option name="closed" value="true" />
@@ -642,7 +635,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711412269816</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="finished phase 5">
+      <option name="closed" value="true" />
+      <created>1711495496505</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1711495496505</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -660,7 +661,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="static files passes" />
     <MESSAGE value="all tests pass" />
     <MESSAGE value="fixed some tests" />
     <MESSAGE value="fixed naming" />
@@ -685,7 +685,8 @@
     <MESSAGE value="creategame done" />
     <MESSAGE value="listgames done" />
     <MESSAGE value="join done" />
-    <option name="LAST_COMMIT_MESSAGE" value="join done" />
+    <MESSAGE value="finished phase 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished phase 5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -891,8 +892,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="410" />
+          <line>78</line>
+          <option name="timeStamp" value="411" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="412" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/client/src/main/java/ui/GamePlayUI.java</url>
