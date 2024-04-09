@@ -7,7 +7,11 @@ import model.User;
 import model.UserRequests;
 import model.WebGame;
 
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+
+import static ui.GamePlayUI.drawChessBoard;
 
 public class LoginUI {
     private static AuthData authdata;
@@ -103,7 +107,7 @@ public class LoginUI {
     //join games
     public static String joinGame(String... params) throws DataAccessException {
         assertSignedIn();
-        if(params.length == 2){
+        if(params.length <=2){
             try{
                 var id = Integer.parseInt(params[0]);
                 var color = params[1].toUpperCase();
@@ -111,14 +115,19 @@ public class LoginUI {
                 server.joinGame(authdata.getAuthToken(), gamereq);
                 var game = getGame(id);
                 if(game != null){
-                    if(game.getBlackUsername().equals(authdata.getUsername())){
+                    if(game.getBlackUsername() != null && game.getBlackUsername().equals(authdata.getUsername())){
                         color = "BLACK";
+                        var out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
+                        drawChessBoard(out);
+                        return String.format("you joined %s as %s",id, color );
                     }else if (game.getWhiteUsername().equals(authdata.getUsername())){
                         color = "WHITE";
+                        var out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
+                        drawChessBoard(out);
+                        return String.format("you joined %s as %s",id, color );
                     }else{
                         return "the game is full";
                     }
-                    return String.format("you joined %s as %s",id, color );
                 }else{
                     //add as observer
                     observerGame(params);
