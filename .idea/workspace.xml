@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="broke up test cases for passoff">
+    <list default="true" id="018ebcba-a5e8-4217-9a35-303d9a93d86e" name="Changes" comment="broke up test fixed join ect.">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/websocket/NotificationHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/Connection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/ConnectionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/WebSocketTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/webSocketMessages/serverMessages/ServerMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/webSocketMessages/userCommands/UserGameCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/LoginUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +32,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -34,14 +45,12 @@
     &quot;assignee&quot;: &quot;smcnary2&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="58e0caea-09f1-46a8-9549-0da203f87c00" />
-        <option name="url" value="https://github.com/smcnary2/chess.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/smcnary2/chess.git",
+    "accountId": "58e0caea-09f1-46a8-9549-0da203f87c00"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -56,86 +65,86 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.GamePlayUI.executor": "Run",
-    "Application.LoginUI.executor": "Run",
-    "Application.Main (1).executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.Main2.executor": "Debug",
-    "Application.Server.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.DataAccessTests.executor": "Run",
-    "JUnit.PersistenceTests.executor": "Run",
-    "JUnit.PersistenceTests.persistenceTest.executor": "Run",
-    "JUnit.ServerFacadeTests.executor": "Run",
-    "JUnit.ServerFacadeTests.extensiveRegisterTest.executor": "Run",
-    "JUnit.StandardAPITests.badAuthJoin.executor": "Run",
-    "JUnit.StandardAPITests.badColorJoin.executor": "Run",
-    "JUnit.StandardAPITests.clearData.executor": "Run",
-    "JUnit.StandardAPITests.executor": "Run",
-    "JUnit.StandardAPITests.failLogout.executor": "Run",
-    "JUnit.StandardAPITests.failRegister.executor": "Debug",
-    "JUnit.StandardAPITests.goodCreate.executor": "Run",
-    "JUnit.StandardAPITests.registerTwice.executor": "Run",
-    "JUnit.StandardAPITests.staticFiles.executor": "Run",
-    "JUnit.StandardAPITests.successLogin.executor": "Run",
-    "JUnit.StandardAPITests.successLogout.executor": "Run",
-    "JUnit.StandardAPITests.uniqueAuthorizationTokens.executor": "Run",
-    "JUnit.UserServiceTests.clearUserDAO.executor": "Run",
-    "JUnit.UserServiceTests.createGame.executor": "Run",
-    "JUnit.UserServiceTests.createGameInvalidReq.executor": "Run",
-    "JUnit.UserServiceTests.executor": "Run",
-    "JUnit.UserServiceTests.joinGame.executor": "Run",
-    "JUnit.UserServiceTests.joinGameInvalidReq.executor": "Run",
-    "JUnit.UserServiceTests.listgames.executor": "Run",
-    "JUnit.UserServiceTests.listgamesInvalidReq.executor": "Run",
-    "JUnit.UserServiceTests.loginInvalidReq.executor": "Run",
-    "JUnit.UserServiceTests.loginUser.executor": "Run",
-    "JUnit.UserServiceTests.loginWrongPw.executor": "Run",
-    "JUnit.UserServiceTests.logoutUser.executor": "Run",
-    "JUnit.UserServiceTests.registerUser.executor": "Run",
-    "JUnit.UserServiceTests.resisterUserInvalidReq.executor": "Run",
-    "JUnit.dataAccessTests.* and 2 more.executor": "Run",
-    "JUnit.dataAccessTests.* and 6 more.executor": "Run",
-    "JUnit.dataAccessTests.executor": "Run",
-    "JUnit.dataAccessTests.insertUserTest.executor": "Run",
-    "JUnit.dataAccessTests.invalidfindUserTest.executor": "Run",
-    "JUnit.passoffTests.serverTests in server.executor": "Run",
-    "JUnit.serviceTests in server.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "18",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/sofia/IdeaProjects/chess/server/lib/passoff-dependencies.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.updates",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.GamePlayUI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LoginUI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main2.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.DataAccessTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersistenceTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersistenceTests.persistenceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ServerFacadeTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ServerFacadeTests.extensiveRegisterTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.badAuthJoin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.badColorJoin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.clearData.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.failLogout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.failRegister.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.StandardAPITests.goodCreate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.registerTwice.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.staticFiles.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.successLogin.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.successLogout.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StandardAPITests.uniqueAuthorizationTokens.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.clearUserDAO.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.createGame.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.createGameInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.joinGame.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.joinGameInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.listgames.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.listgamesInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.loginInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.loginUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.loginWrongPw.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.logoutUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.registerUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.resisterUserInvalidReq.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.dataAccessTests.* and 2 more.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.dataAccessTests.* and 6 more.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.dataAccessTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.dataAccessTests.insertUserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.dataAccessTests.invalidfindUserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.passoffTests.serverTests in server.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.serviceTests in server.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sofia/IdeaProjects/chess/server/lib/passoff-dependencies.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sofia\IdeaProjects\chess" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sofia\IdeaProjects\chess\shared\src\main\java\webSocketMessages" />
+      <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\test\java\passoffTests\serverTests" />
       <recent name="C:\Users\sofia\IdeaProjects\chess\client\src\test\java\clientTests" />
       <recent name="C:\Users\sofia\IdeaProjects\chess\client\src\main\java\ui" />
-      <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\test\java\passoffTests\serverTests" />
       <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\java\dataAccess" />
-      <recent name="C:\Users\sofia\IdeaProjects\chess\server\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -213,8 +222,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-18.0.2-corretto-18.0.2-4caba194b151-5720f15e" />
-        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -246,15 +255,10 @@
       <workItem from="1710279067788" duration="2951000" />
       <workItem from="1710790725941" duration="10075000" />
       <workItem from="1710866280704" duration="43789000" />
-      <workItem from="1712703473849" duration="1429000" />
-    </task>
-    <task id="LOCAL-00014" summary="pass queen">
-      <option name="closed" value="true" />
-      <created>1705704717632</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1705704717632</updated>
+      <workItem from="1712703473849" duration="3494000" />
+      <workItem from="1712855854016" duration="3448000" />
+      <workItem from="1712860232581" duration="116000" />
+      <workItem from="1712860460658" duration="2308000" />
     </task>
     <task id="LOCAL-00015" summary="pass king">
       <option name="closed" value="true" />
@@ -640,7 +644,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711496417890</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="broke up test fixed join ect.">
+      <option name="closed" value="true" />
+      <created>1712705594636</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1712705594636</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -658,7 +670,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed some tests" />
     <MESSAGE value="fixed naming" />
     <MESSAGE value="phase 4 setup" />
     <MESSAGE value="UserDAO creates tables" />
@@ -683,7 +694,8 @@
     <MESSAGE value="join done" />
     <MESSAGE value="finished phase 5" />
     <MESSAGE value="broke up test cases for passoff" />
-    <option name="LAST_COMMIT_MESSAGE" value="broke up test cases for passoff" />
+    <MESSAGE value="broke up test fixed join ect." />
+    <option name="LAST_COMMIT_MESSAGE" value="broke up test fixed join ect." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

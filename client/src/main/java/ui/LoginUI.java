@@ -161,6 +161,28 @@ public class LoginUI {
         }
         return null;
     }
+    public static String reloadBoard() throws DataAccessException {
+        assertSignedIn();
+        return " ";
+    }
+    public static String leave() throws DataAccessException {
+        assertSignedIn();
+        return " ";
+    }
+    public static String makeMove() throws DataAccessException {
+        assertPlayer();
+
+        return " ";
+    }
+    public static String Resign() throws DataAccessException {
+        assertPlayer();
+        return " ";
+    }
+    public static String highlightMoves() throws DataAccessException {
+        assertPlayer();
+        return "";
+    }
+
 
     public static String help() {
         if (state == State.SIGNEDOUT) {
@@ -170,8 +192,8 @@ public class LoginUI {
                     - quit
                     - help
                     """;
-        }
-        return """
+        }if(state == State.SIGNEDIN){
+            return """
                 - list
                 - create <NAMES>
                 - join <ID> [WHITE|BLACK|<empty>]
@@ -180,13 +202,33 @@ public class LoginUI {
                 - quit
                 - help
                 """;
+        }if(state == State.PLAYER){
+            return """
+                    - reload
+                    - make
+                    - highlight
+                    - leave
+                    - resign
+                    - help
+                    """;
+        }
+        //state observer
+        return """
+                - redraw chess board
+                - leave
+                - help
+                """;
+
     }
 
     private static void assertSignedIn() throws DataAccessException {
         if (state == State.SIGNEDOUT) {
             throw new DataAccessException("you must sign in");
         }
-
-
+    }
+    private static void assertPlayer() throws DataAccessException {
+        if (state != State.PLAYER) {
+            throw new DataAccessException("You cannot preform this action");
+        }
     }
 }
